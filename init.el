@@ -126,22 +126,21 @@
   (global-fixmee-mode t)
   (setq-default fixmee--listview-local-only t))
 
+;;; ido stuff
 (use-package flx-ido
   :ensure t
   :config
   (flx-ido-mode 1))
-
 (use-package idomenu
   :ensure t
   :bind ("C-c i" . idomenu)
   :config
   (setq ido-enable-flex-matching t
         ido-use-faces nil
-        ido-buffer-disable-smart-matches nil
-        ))
-
+        ido-buffer-disable-smart-matches nil))
 (ido-mode t)
 (ido-everywhere 1)
+;;; /ido stuff
 
 (use-package align
   :ensure t
