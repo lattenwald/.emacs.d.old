@@ -1,6 +1,7 @@
-/auto-save-list
+/auto\-save\-list
 /elpa
-/projectile-bookmarks.eld
+/projectile\-bookmarks\.eld
 /var
-/ido.last
+/ido\.last
+/smex\-items
 *~
