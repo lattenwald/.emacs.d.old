@@ -129,19 +129,19 @@
 (use-package flx-ido
   :ensure t
   :config
-  (setq flx-ido-mode t))
+  (flx-ido-mode 1))
 
 (use-package idomenu
   :ensure t
   :bind ("C-c i" . idomenu)
   :config
-  (ido-mode 1)
-  (ido-everywhere 1)
   (setq ido-enable-flex-matching t
         ido-use-faces nil
         ido-buffer-disable-smart-matches nil
-        ;; ido-mode 'both nil (ido)
         ))
+
+(ido-mode t)
+(ido-everywhere 1)
 
 (use-package align
   :ensure t
