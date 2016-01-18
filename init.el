@@ -16,9 +16,9 @@
 (global-set-key (kbd "C-'") 'comment-or-uncomment-region)
 (setq x-stretch-cursor t)
 (global-set-key (kbd "C-c o") 'occur)
-(setq tab-width 4
-      electric-pair-mode t
-      tramp-use-ssh-controlmaster-options nil)
+(setq-default tab-width 4
+              electric-pair-mode t
+              tramp-use-ssh-controlmaster-options nil)
 (server-start)
 
 ;;; Moving between windows
@@ -60,11 +60,16 @@
 (require 'use-package)
 (require 'diminish)                ;; if you use :diminish
 
+(use-package s ;; dependency
+  :ensure t
+  :pin melpa-stable)
+
 (use-package ag
   :ensure t)
 
 (use-package projectile
   :ensure t
+  :pin melpa-stable
   :config
   (projectile-global-mode t))
 
@@ -79,6 +84,7 @@
 
 (use-package company
   :ensure t
+  :pin melpa-stable
   :diminish company-mode
   :config
   (global-company-mode t)
@@ -207,11 +213,17 @@
               (structured-haskell-mode)))
   (add-hook 'interactive-haskell-mode (diminish 'interactive-haskell-mode)))
 
+(use-package helm-core
+  :pin melpa-stable
+  :ensure t)
+
 (use-package helm
+  :pin melpa-stable
   :ensure t)
 
 (use-package helm-ag
-  :ensure t)
+  :ensure t
+  :pin melpa-stable)
 
 (use-package spaceline
   :ensure t
@@ -254,8 +266,21 @@
 (use-package yaml-mode
   :ensure t)
 
+(use-package with-editor ;; dependency
+  :ensure t
+  :pin melpa-stable)
+
+(use-package git-commit ;; dependency
+  :ensure t
+  :pin melpa-stable)
+
+(use-package magit-popup ;; dependency
+  :ensure t
+  :pin melpa-stable)
+
 (use-package magit
-  :ensure t)
+  :ensure t
+  :pin melpa-stable)
 
 (use-package ledger-mode
   :ensure t
@@ -297,6 +322,7 @@
 
 (use-package flycheck
   :ensure t
+  :pin melpa-stable
   :config
   (setq flycheck-check-syntax-automatically '(save mode-enabled)
         flycheck-completion-system 'ido
@@ -317,6 +343,7 @@
 
 (use-package web-mode
   :ensure t
+  :pin melpa-stable
   :config
   ;;; web-mode
   (add-to-list 'auto-mode-alist '("\\.html?$" . web-mode))
