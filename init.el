@@ -293,6 +293,7 @@
 
 (use-package ess
   :ensure t
+  :pin melpa-stable
   :config
   (require 'ess-site)
   (eval-after-load "ess-mode" (define-key ess-mode-map (kbd "_") nil))
