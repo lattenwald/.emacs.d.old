@@ -5,7 +5,7 @@
 ;;; Look and feel
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'wombat)
-(menu-bar-mode 0)
+;; (menu-bar-mode 0)
 (tool-bar-mode 0)
 (column-number-mode t)
 
@@ -150,68 +150,7 @@
 
 (use-package align
   :ensure t
-  :config
-  (add-to-list 'align-rules-list
-               '(haskell-types
-                 (regexp . "\\(\\s-+\\)\\(::\\|∷\\)\\s-+")
-                 (modes quote (haskell-mode literate-haskell-mode))))
-  (add-to-list 'align-rules-list
-               '(haskell-assignment
-                 (regexp . "\\(\\s-+\\)=\\s-+")
-                 (modes quote (haskell-mode literate-haskell-mode))))
-  (add-to-list 'align-rules-list
-               '(haskell-arrows
-                 (regexp . "\\(\\s-+\\)\\(->\\|→\\)\\s-+")
-                 (modes quote (haskell-mode literate-haskell-mode))))
-  (add-to-list 'align-rules-list
-               '(haskell-left-arrows
-                 (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
-                 (modes quote (haskell-mode literate-haskell-mode)))))
-
-(use-package stack-mode
-  :ensure t
-  :config
-  (eval-after-load "stack-mode"
-  '(progn
-     (define-key stack-mode-map (kbd "C-c C-l") nil)
-     (define-key stack-mode-map (kbd "C-c C-t") nil)
-     (define-key stack-mode-map (kbd "C-c C-r") 'stack-mode-load-module)
-     (define-key stack-mode-map (kbd "C-f") 'stack-mode-type))))
-
-(use-package hindent
-  :ensure t
-  :diminish hindent-mode)
-
-(use-package shm
-  :ensure t
-  :config
-  (setq shm-auto-insert-bangs t
-        shm-auto-insert-skeletons t
-        shm-lambda-indent-style 'leftmost-parent
-        shm-prevent-parent-deletion nil
-        shm-use-hdevtools t
-        shm-use-presentation-mode t)
-  (add-hook 'structured-haskell-mode-hook
-          (lambda nil
-            (define-key shm-map (kbd "RET") 'shm/newline-indent-proxy)
-            (define-key shm-map (kbd "C-j") 'shm/newline-indent)
-            (define-key shm-map (kbd "DEL") nil)
-            (define-key shm-map (kbd "<deletechar>") nil))))
-
-(use-package haskell-mode
-  :ensure t
-  :config
-  (setq haskell-ask-also-kill-buffers nil
-        haskell-process-type 'stack-ghci)
-  (add-hook 'haskell-mode-hook
-            (lambda nil
-              (turn-on-haskell-indentation)
-              (hindent-mode)
-              (haskell-decl-scan-mode)
-              (stack-mode)
-              (interactive-haskell-mode)
-              (structured-haskell-mode)))
-  (add-hook 'interactive-haskell-mode (diminish 'interactive-haskell-mode)))
+  :config)
 
 (use-package helm-core
   :pin melpa-stable
@@ -370,3 +309,79 @@
                 ;; enable flycheck
                 (flycheck-select-checker 'jsxhint-checker)
                 (flycheck-mode)))))
+
+
+;;; haskell stuff
+
+(add-to-list 'load-path "~/.emacs.d/git/haskell-ide-engine/elisp")
+(load-file  "~/.emacs.d/git/haskell-ide-engine/elisp/hie.el")
+
+(use-package stack-mode
+  :ensure t
+  :config
+  (eval-after-load "stack-mode"
+    '(progn
+       (defun stack-mode-set-initial-command ()
+         "Set the initial command callback. The `stack ide` command will
+reload targets on start-up, so that's the default command we'll
+start with."
+         (setq stack-mode-current-command nil)
+         (setq stack-mode-queue (stack-fifo-make))
+         (stack-mode-log "Set initial command."))
+       (define-key stack-mode-map (kbd "C-c C-l") nil)
+       (define-key stack-mode-map (kbd "C-c C-t") nil)
+       (define-key stack-mode-map (kbd "C-c C-r") 'stack-mode-load-module)
+       (define-key stack-mode-map (kbd "C-f") 'stack-mode-type))))
+
+
+(use-package hindent
+  :ensure t
+  :diminish hindent-mode)
+
+;; (use-package shm
+;;   :ensure t
+;;   :config
+;;   (setq shm-auto-insert-bangs t
+;;         shm-auto-insert-skeletons t
+;;         shm-lambda-indent-style 'leftmost-parent
+;;         shm-prevent-parent-deletion nil
+;;         shm-use-hdevtools t
+;;         shm-use-presentation-mode t)
+;;   (add-hook 'structured-haskell-mode-hook
+;;             (lambda nil
+;;               (define-key shm-map (kbd "RET") 'shm/newline-indent-proxy)
+;;               (define-key shm-map (kbd "C-j") 'shm/newline-indent)
+;;               (define-key shm-map (kbd "DEL") nil)
+;;               (define-key shm-map (kbd "<deletechar>") nil))))
+
+(use-package haskell-mode
+  :ensure t
+  :config
+  (setq haskell-ask-also-kill-buffers nil
+        haskell-process-type 'stack-ghci)
+  (add-to-list 'align-rules-list
+               '(haskell-types
+                 (regexp . "\\(\\s-+\\)\\(::\\|∷\\)\\s-+")
+                 (modes quote (haskell-mode literate-haskell-mode))))
+  (add-to-list 'align-rules-list
+               '(haskell-assignment
+                 (regexp . "\\(\\s-+\\)=\\s-+")
+                 (modes quote (haskell-mode literate-haskell-mode))))
+  (add-to-list 'align-rules-list
+               '(haskell-arrows
+                 (regexp . "\\(\\s-+\\)\\(->\\|→\\)\\s-+")
+                 (modes quote (haskell-mode literate-haskell-mode))))
+  (add-to-list 'align-rules-list
+               '(haskell-left-arrows
+                 (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
+                 (modes quote (haskell-mode literate-haskell-mode))))
+  (add-hook 'haskell-mode-hook
+            (lambda nil
+              (turn-on-haskell-indentation)
+              (hindent-mode)
+              (haskell-decl-scan-mode)
+              (stack-mode)
+              (interactive-haskell-mode)
+              ;; (structured-haskell-mode)
+              ))
+  (add-hook 'interactive-haskell-mode (diminish 'interactive-haskell-mode)))

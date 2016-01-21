@@ -1,3 +1,6 @@
 [submodule "git/use-package"]
 	path = git/use-package
 	url = git@github.com:jwiegley/use-package.git
+[submodule "git/haskell-ide-engine"]
+	path = git/haskell-ide-engine
+	url = git@github.com:haskell/haskell-ide-engine.git
