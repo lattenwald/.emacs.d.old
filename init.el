@@ -385,3 +385,5 @@ start with."
               ;; (structured-haskell-mode)
               ))
   (add-hook 'interactive-haskell-mode (diminish 'interactive-haskell-mode)))
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
