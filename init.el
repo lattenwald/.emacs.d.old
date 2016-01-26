@@ -119,7 +119,8 @@
   (add-hook 'cperl-mode-hook
             (lambda nil
               (smart-tabs-mode-enable)
-              (smart-tabs-advice cperl-indent-line cperl-indent-level))))
+              (smart-tabs-advice cperl-indent-line cperl-indent-level)
+              (electric-pair-mode t))))
 
 (use-package button-lock
   :ensure t
@@ -150,7 +151,8 @@
 
 (use-package align
   :ensure t
-  :config)
+  :config
+  :bind ("M-[" . align))
 
 (use-package helm-core
   :pin melpa-stable
@@ -310,7 +312,6 @@
                 (flycheck-select-checker 'jsxhint-checker)
                 (flycheck-mode)))))
 
-
 ;;; haskell stuff
 
 (add-to-list 'load-path "~/.emacs.d/git/haskell-ide-engine/elisp")
@@ -381,9 +382,10 @@ start with."
               (hindent-mode)
               (haskell-decl-scan-mode)
               (stack-mode)
-              (interactive-haskell-mode)
+              ;; (interactive-haskell-mode)
               ;; (structured-haskell-mode)
               ))
   (add-hook 'interactive-haskell-mode (diminish 'interactive-haskell-mode)))
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
