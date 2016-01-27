@@ -360,22 +360,6 @@ start with."
   :config
   (setq haskell-ask-also-kill-buffers nil
         haskell-process-type 'stack-ghci)
-  (add-to-list 'align-rules-list
-               '(haskell-types
-                 (regexp . "\\(\\s-+\\)\\(::\\|∷\\)\\s-+")
-                 (modes quote (haskell-mode literate-haskell-mode))))
-  (add-to-list 'align-rules-list
-               '(haskell-assignment
-                 (regexp . "\\(\\s-+\\)=\\s-+")
-                 (modes quote (haskell-mode literate-haskell-mode))))
-  (add-to-list 'align-rules-list
-               '(haskell-arrows
-                 (regexp . "\\(\\s-+\\)\\(->\\|→\\)\\s-+")
-                 (modes quote (haskell-mode literate-haskell-mode))))
-  (add-to-list 'align-rules-list
-               '(haskell-left-arrows
-                 (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
-                 (modes quote (haskell-mode literate-haskell-mode))))
   (add-hook 'haskell-mode-hook
             (lambda nil
               (turn-on-haskell-indentation)
@@ -385,7 +369,24 @@ start with."
               ;; (interactive-haskell-mode)
               ;; (structured-haskell-mode)
               ))
-  (add-hook 'interactive-haskell-mode (diminish 'interactive-haskell-mode)))
+  (add-hook 'interactive-haskell-mode (diminish 'interactive-haskell-mode))
+  (add-hook 'align-load-hook (lambda ()
+                               (add-to-list 'align-rules-list
+                                            '(haskell-types
+                                              (regexp . "\\(\\s-+\\)\\(::\\|∷\\)\\s-+")
+                                              (modes quote (haskell-mode literate-haskell-mode))))
+                               (add-to-list 'align-rules-list
+                                            '(haskell-assignment
+                                              (regexp . "\\(\\s-+\\)=\\s-+")
+                                              (modes quote (haskell-mode literate-haskell-mode))))
+                               (add-to-list 'align-rules-list
+                                            '(haskell-arrows
+                                              (regexp . "\\(\\s-+\\)\\(->\\|→\\)\\s-+")
+                                              (modes quote (haskell-mode literate-haskell-mode))))
+                               (add-to-list 'align-rules-list
+                                            '(haskell-left-arrows
+                                              (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
+                                              (modes quote (haskell-mode literate-haskell-mode)))))))
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
