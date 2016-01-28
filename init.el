@@ -312,7 +312,7 @@
                 (flycheck-mode)))))
 
 ;;; haskell stuff
-(load "haskell.el")
+(load "~/.emacs.d/haskell.el")
 
 ;;; other
 (put 'upcase-region 'disabled nil)
