@@ -188,6 +188,9 @@
         sr-speedbar-default-width 20
         sr-speedbar-right-side nil))
 
+(use-package sunrise-x-checkpoints
+  :ensure t)
+
 (use-package undo-tree
   :ensure t
   :diminish undo-treemode
@@ -310,6 +313,10 @@
                 ;; enable flycheck
                 (flycheck-select-checker 'jsxhint-checker)
                 (flycheck-mode)))))
+
+(use-package gitignore-mode
+  :ensure t
+  :pin melpa-stable)
 
 ;;; haskell stuff
 (load "~/.emacs.d/haskell.el")
