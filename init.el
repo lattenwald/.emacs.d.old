@@ -69,14 +69,11 @@
 
 (use-package projectile
   :ensure t
-  :pin melpa-stable
-  :config
-  (projectile-global-mode t))
+  :pin melpa-stable)
 
 (use-package exec-path-from-shell
   :ensure t
   :config
-  (setq exec-path-from-shell-arguments '("-l"))
   (exec-path-from-shell-initialize))
 
 (use-package diminish
@@ -85,36 +82,27 @@
 (use-package company
   :ensure t
   :pin melpa-stable
-  :diminish company-mode
-  :config
-  (global-company-mode t)
-  (setq company-idle-delay 0.15))
+  :diminish company-mode)
 
 (use-package smart-tabs-mode
   :ensure t
   :config
-  (setq-default indent-tabs-mode nil)
-  (add-hook 'smart-tabs-mode (lambda nil
-                               (smart-tabs-insinuate
-                                'c 'javascript 'cperl 'python 'ruby))))
+  (add-hook 'smart-tabs-mode
+            (lambda nil
+              (smart-tabs-insinuate
+               'c 'javascript 'cperl 'python 'ruby))))
 
 (use-package cperl-mode
   :ensure t
   :config
   (defalias 'perl-mode 'cperl-mode)
   (defvaralias 'cperl-indent-level 'tab-width)
-  (setq cperl-auto-newline-after-colon t
-        cperl-close-paren-offset 0
-        cperl-continued-statement-offset 4
-        cperl-electric-keywords t
-        cperl-electric-parens-mark nil
-        cperl-electric-parens-string "\"\""
-        cperl-hairy t
-        cperl-electric-parens nil
-        ;; cperl-electric-brace nil
-        cperl-highlight-variables-indiscriminately t
-        cperl-indent-parens-as-block t)
   (define-key cperl-mode-map (kbd "C-h f") 'cperl-perldoc)
+  (defadvice cperl-backward-to-start-of-continued-exp (after indentation-fix)
+    (and (not (memq char-after '(?\) ?\})))
+         (or (not is-block) (looking-back "^[ \t]+"))
+         (> (current-column) cperl-continued-statement-offset)
+         (backward-char cperl-continued-statement-offset)))
   (add-hook 'cperl-mode-hook
             (lambda nil
               (smart-tabs-mode-enable)
@@ -127,23 +115,17 @@
 
 (use-package fixmee
   :ensure t
-  :diminish fixmee-mode
-  :config
-  (global-fixmee-mode t)
-  (setq-default fixmee--listview-local-only t))
+  :diminish fixmee-mode)
 
 ;;; ido stuff
 (use-package flx-ido
-  :ensure t
-  :config
-  (flx-ido-mode 1))
+  :ensure t)
+
 (use-package idomenu
   :ensure t
   :bind ("C-c i" . idomenu)
-  :config
-  (setq ido-enable-flex-matching t
-        ido-use-faces nil
-        ido-buffer-disable-smart-matches nil))
+  :config)
+
 (ido-mode t)
 (ido-everywhere 1)
 ;;; /ido stuff
@@ -169,24 +151,15 @@
   :ensure t
   :config
   (require 'spaceline-config)
-  (setq powerline-height 20)
-  (spaceline-spacemacs-theme)
-  (setq ns-use-srgb-colorspace nil))
+  (spaceline-spacemacs-theme))
 
 (use-package whitespace
   :diminish global-whitespace-mode
   :config
-  (add-hook 'before-save-hook 'whitespace-cleanup)
-  (setq whitespace-style '(face trailing space-before-tab empty))
-  (global-whitespace-mode t))
+  (add-hook 'before-save-hook 'whitespace-cleanup))
 
 (use-package sunrise-commander
-  :ensure t
-  :config
-  (setq sr-listing-switches "--group-directories-first -alDhgG"
-        sr-show-hidden-files t
-        sr-speedbar-default-width 20
-        sr-speedbar-right-side nil))
+  :ensure t)
 
 (use-package sunrise-x-checkpoints
   :ensure t)
@@ -202,9 +175,7 @@
   (global-undo-tree-mode t))
 
 (use-package lua-mode
-  :ensure t
-  :config
-  (setq lua-indent-level 4))
+  :ensure t)
 
 (use-package yaml-mode
   :ensure t)
@@ -228,9 +199,6 @@
 (use-package ledger-mode
   :ensure t
   :config
-  (setq ledger-init-file-name nil
-        ledger-mode-should-check-version nil
-        ledger-post-use-completion-engine :ido)
   (add-to-list 'auto-mode-alist '("\\.ledger$" . ledger-mode))
   (add-to-list 'auto-mode-alist '("ledger.journal$" . ledger-mode)))
 
@@ -245,7 +213,6 @@
 (use-package org
   :ensure t
   :config
-  (setq org-support-shift-select t)
   (eval-after-load "org"
     '(progn
        (define-key org-mode-map (kbd "<M-left>") nil)
@@ -260,17 +227,11 @@
        )))
 
 (use-package linum
-  :ensure t
-  :config
-  (global-linum-mode t))
+  :ensure t)
 
 (use-package flycheck
   :ensure t
-  :pin melpa-stable
-  :config
-  (setq flycheck-check-syntax-automatically '(save mode-enabled)
-        flycheck-completion-system 'ido
-        flycheck-ghc-args '("-fno-warn-unused-do-bind")))
+  :pin melpa-stable)
 
 (use-package go-mode
   :ensure t)
@@ -318,10 +279,19 @@
   :ensure t
   :pin melpa-stable)
 
+(use-package csharp-mode
+  :ensure t
+  :pin melpa-stable)
+
+(use-package rainbow-delimiters
+  :ensure t
+  :pin melpa-stable)
+
 ;;; haskell stuff
-(load "~/.emacs.d/haskell.el")
+;; (load "~/.emacs.d/haskell.el")
 
 ;;; other
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
+(put 'dired-find-alternate-file 'disabled nil)
