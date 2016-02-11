@@ -20,6 +20,7 @@
   :ensure t
   :config
   (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+  (add-hook 'haskell-mode-hook 'hie-mode)
   (add-hook 'align-load-hook 'haskell-align-rules))
 
 (add-to-list 'load-path "~/.emacs.d/git/haskell-ide-engine/elisp")
