@@ -25,6 +25,8 @@
  '(global-fixmee-mode t)
  '(global-linum-mode t)
  '(global-whitespace-mode t)
+ '(haskell-ask-also-kill-buffers nil)
+ '(haskell-process-type (quote stack-ghci))
  '(ido-buffer-disable-smart-matches nil)
  '(ido-enable-flex-matching t)
  '(ido-use-faces nil)

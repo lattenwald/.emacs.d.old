@@ -69,7 +69,9 @@
 
 (use-package projectile
   :ensure t
-  :pin melpa-stable)
+  :pin melpa-stable
+  :config
+  (add-hook 'after-init-hook 'projectile-global-mode))
 
 (use-package exec-path-from-shell
   :ensure t
@@ -82,7 +84,9 @@
 (use-package company
   :ensure t
   :pin melpa-stable
-  :diminish company-mode)
+  :diminish company-mode
+  :config
+  (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package smart-tabs-mode
   :ensure t
@@ -287,8 +291,11 @@
   :ensure t
   :pin melpa-stable)
 
+(add-hook 'after-init-hook 'electric-pair-mode)
+
 ;;; haskell stuff
 ;; (load "~/.emacs.d/haskell.el")
+(load "~/.emacs.d/hie.el")
 
 ;;; other
 (put 'upcase-region 'disabled nil)
