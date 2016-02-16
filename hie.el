@@ -23,6 +23,16 @@
   (add-hook 'haskell-mode-hook 'hie-mode)
   (add-hook 'align-load-hook 'haskell-align-rules))
 
+
+;; (add-to-list 'load-path ".stack/snapshots/x86_64-osx/lts-5.2/7.10.3/share/x86_64-osx-ghc-7.10.3/ghc-mod-5.5.0.0/elisp")
+
+(use-package ghc
+  :ensure t
+  :config
+  (autoload 'ghc-init "ghc" nil t)
+  (autoload 'ghc-debug "ghc" nil t)
+  (add-hook 'haskell-mode-hook 'ghc-init))
+
 (add-to-list 'load-path "~/.emacs.d/git/haskell-ide-engine/elisp")
 (load-file  "~/.emacs.d/git/haskell-ide-engine/elisp/hie.el")
 

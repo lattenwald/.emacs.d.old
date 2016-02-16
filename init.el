@@ -287,15 +287,19 @@
   :ensure t
   :pin melpa-stable)
 
-(use-package rainbow-delimiters
+(use-package nginx-mode
   :ensure t
   :pin melpa-stable)
 
+(use-package vimrc-mode
+  :ensure t)
+
 (add-hook 'after-init-hook 'electric-pair-mode)
 
-;;; haskell stuff
 ;; (load "~/.emacs.d/haskell.el")
 (load "~/.emacs.d/hie.el")
+
+(load "~/.emacs.d/staging.el")
 
 ;;; other
 (put 'upcase-region 'disabled nil)

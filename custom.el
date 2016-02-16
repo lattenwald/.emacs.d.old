@@ -31,9 +31,11 @@
  '(ido-enable-flex-matching t)
  '(ido-use-faces nil)
  '(indent-tabs-mode nil)
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(ledger-init-file-name nil)
  '(ledger-mode-should-check-version nil)
  '(ledger-post-use-completion-engine :ido)
+ '(linum-format (quote dynamic))
  '(lua-indent-level 2)
  '(ns-use-srgb-colorspace nil)
  '(org-support-shift-select t)
@@ -49,5 +51,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Hack"))))
  '(cperl-array-face ((t (:inherit font-lock-variable-name-face))))
  '(cperl-hash-face ((t (:inherit font-lock-variable-name-face)))))
