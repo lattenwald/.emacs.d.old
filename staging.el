@@ -12,3 +12,7 @@
 
 (use-package god-mode
   :ensure t)
+
+(use-package inf-ruby
+  :ensure t
+  :pin melpa-stable)
