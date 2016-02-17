@@ -19,6 +19,9 @@
 (use-package haskell-mode
   :ensure t
   :config
+  (eval-after-load "interactive-haskell-mode"
+    (progn
+      (define-key interactive-haskell-mode-map (kbd "C-c C-t") nil)))
   (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
   (add-hook 'haskell-mode-hook 'hie-mode)
   (add-hook 'align-load-hook 'haskell-align-rules))
