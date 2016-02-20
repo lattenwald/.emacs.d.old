@@ -19,4 +19,6 @@
 
 (use-package elm-mode
   :ensure t
-  :pin melpa-stable)
+  :pin melpa-stable
+  :config
+  (add-hook 'elm-mode-hook 'haskell-decl-scan-mode))
