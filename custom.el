@@ -18,7 +18,7 @@
  '(exec-path-from-shell-arguments (quote ("-l")))
  '(fixmee--listview-local-only t t)
  '(fixmee-notice-regexp
-   "\\(@@@+\\|\\_<\\(?:[Tt][Oo][Dd][Oo]+\\|[Bb][Uu][Gg]\\|[Ff][Ii][Xx][Mm][Ee]+\\|XXX+\\)\\)\\(?:[/:?!.     
+   "\\(\\_<\\(?:[Tt][Oo][Dd][Oo]+\\|[Bb][Uu][Gg]\\|[Ff][Ii][Xx][Mm][Ee]+\\|XXX+\\)\\)\\(?:[/:?!.    
 ]+\\|-+\\(?:\\s-\\|[
 ]\\)\\|\\_>\\)")
  '(flx-ido-mode t)
