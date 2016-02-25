@@ -17,6 +17,10 @@
  '(cua-mode t nil (cua-base))
  '(exec-path-from-shell-arguments (quote ("-l")))
  '(fixmee--listview-local-only t t)
+ '(fixmee-notice-regexp
+   "\\(@@@+\\|\\_<\\(?:[Tt][Oo][Dd][Oo]+\\|[Bb][Uu][Gg]\\|[Ff][Ii][Xx][Mm][Ee]+\\|XXX+\\)\\)\\(?:[/:?!.     
+]+\\|-+\\(?:\\s-\\|[
+]\\)\\|\\_>\\)")
  '(flx-ido-mode t)
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(flycheck-completion-system (quote ido))
@@ -53,4 +57,5 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Hack"))))
  '(cperl-array-face ((t (:inherit font-lock-variable-name-face))))
- '(cperl-hash-face ((t (:inherit font-lock-variable-name-face)))))
+ '(cperl-hash-face ((t (:inherit font-lock-variable-name-face))))
+ '(fixmee-notice-face ((t (:background "yellow1" :foreground "black")))))
