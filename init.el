@@ -294,11 +294,31 @@
 (use-package vimrc-mode
   :ensure t)
 
+
+(defun elm-align-rules ()
+  (add-to-list 'align-rules-list
+               '(elm-types
+                 (regexp . "\\(\\s-+\\):\\s-+")
+                 (mode . (elm-mode))))
+  (add-to-list 'align-rules-list
+               '(elm-assignment
+                 (regexp . "\\(\\s-+\\)=\\s-+")
+                 (mode . (elm-mode))))
+  (add-to-list 'align-rules-list
+               '(elm-arrows
+                 (regexp . "\\(\\s-+\\)\\(->\\|→\\)\\s-+")
+                 (mode . (elm-mode))))
+  (add-to-list 'align-rules-list
+               '(elm-left-arrows
+                 (regexp . "\\(\\s-+\\)<-\\s-+")
+                 (mode . (elm-mode)))))
+
 (use-package elm-mode
   :ensure t
   :pin melpa-stable
   :config
-  (add-hook 'elm-mode-hook 'haskell-decl-scan-mode))
+  (add-hook 'elm-mode-hook 'haskell-decl-scan-mode)
+  (add-hook 'align-load-hook 'elm-align-rules))
 
 (add-hook 'after-init-hook 'electric-pair-mode)
 
