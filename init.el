@@ -294,6 +294,12 @@
 (use-package vimrc-mode
   :ensure t)
 
+(use-package elm-mode
+  :ensure t
+  :pin melpa-stable
+  :config
+  (add-hook 'elm-mode-hook 'haskell-decl-scan-mode))
+
 (add-hook 'after-init-hook 'electric-pair-mode)
 
 ;; (load "~/.emacs.d/haskell.el")
