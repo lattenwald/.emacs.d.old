@@ -45,9 +45,6 @@
  '(ledger-post-use-completion-engine :ido)
  '(linum-format (quote dynamic))
  '(lua-indent-level 2)
- '(mu-worlds
-   (quote
-    (["Былины" "bylins.su" 4000 "Шукша" "шукшаьгв" "^Введите имя персонажа (или \"новый\" для создания нового):" "^Персонаж с таким именем уже существует. Введите пароль :"])))
  '(ns-use-srgb-colorspace nil)
  '(org-support-shift-select t)
  '(powerline-height 20)
