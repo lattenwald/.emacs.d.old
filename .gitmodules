@@ -4,3 +4,6 @@
 [submodule "git/haskell-ide-engine"]
 	path = git/haskell-ide-engine
 	url = git@github.com:haskell/haskell-ide-engine.git
+[submodule "git/tintin-mode"]
+	path = git/tintin-mode
+	url = git@github.com:sunwayforever/tintin-mode.git

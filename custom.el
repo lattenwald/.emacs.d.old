@@ -28,6 +28,7 @@
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(flycheck-completion-system (quote ido))
  '(flycheck-ghc-args (quote ("-fno-warn-unused-do-bind")))
+ '(git-commit-fill-column 150)
  '(global-company-mode t)
  '(global-fixmee-mode t)
  '(global-linum-mode t)
