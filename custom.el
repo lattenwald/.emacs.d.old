@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
+ '(company-dabbrev-downcase nil)
  '(company-idle-delay 0.15)
  '(cperl-auto-newline-after-colon t)
  '(cperl-close-paren-offset 0)
@@ -51,6 +52,7 @@
  '(powerline-height 20)
  '(projectile-global-mode t)
  '(projectile-ignored-project-function (quote file-remote-p))
+ '(purescript-mode-hook (quote (turn-on-purescript-indentation)))
  '(sr-listing-switches "--group-directories-first -alDhgG")
  '(sr-show-hidden-files t)
  '(sr-speedbar-default-width 20 t)
