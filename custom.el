@@ -41,6 +41,8 @@
  '(ido-use-faces nil)
  '(indent-tabs-mode nil)
  '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(js2-basic-offset 2)
+ '(js2-strict-missing-semi-warning nil)
  '(kept-new-versions 6)
  '(ledger-init-file-name nil)
  '(ledger-mode-should-check-version nil)
