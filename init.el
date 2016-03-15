@@ -60,6 +60,44 @@
 (require 'use-package)
 (require 'diminish)                ;; if you use :diminish
 
+(use-package pkg-info ;; dependency for flycheck, projectile
+  :ensure t
+  :pin melpa-stable)
+
+(use-package f ;; dependency for psci
+  :ensure t
+  :pin melpa-stable)
+
+(use-package popup ;; dependency for helm
+  :ensure t
+  :pin melpa-stable)
+
+(use-package let-alist ;; dependency for flycheck-purescript
+  :ensure t)
+
+(use-package julia-mode ;; dependency for ess
+  :ensure t
+  :pin melpa-stable)
+
+(use-package nav-flash ;; dependency for fixmee
+  :ensure t
+  :pin melpa-stable)
+
+(use-package seq ;; dependency for flycheck
+  :ensure t)
+
+(use-package deferred ;; dependency for psci
+  :ensure t
+  :pin melpa-stable)
+
+(use-package ucs-utils ;; dependency for back-button
+  :ensure t
+  :pin melpa-stable)
+
+(use-package string-utils ;; dependency for fimee
+  :ensure t
+  :pin melpa-stable)
+
 (use-package s ;; dependency
   :ensure t
   :pin melpa-stable)
