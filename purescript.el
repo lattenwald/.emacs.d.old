@@ -31,11 +31,11 @@
 (use-package psc-ide
   :ensure t)
 
-;; (use-package repl-toggle
-;;   :ensure t
-;;   :pin melpa-stable
-;;   :config
-;;   (add-to-list 'rtog/mode-repl-alist '(purescript-mode . psci)))
+(use-package repl-toggle
+  :ensure t
+  :pin melpa-stable
+  :config
+  (add-to-list 'rtog/mode-repl-alist '(purescript-mode . psci)))
 
 (use-package purescript-mode
   :ensure t
