@@ -42,7 +42,8 @@
   :pin melpa-stable
   :config
   (add-hook 'align-load-hook 'purescript-align-rules)
-  (eval-after-load "purescript-indentation-mode"
-    (define-key purescript-indentation-mode-map (kbd "C-d") nil)))
+  (add-hook 'purescript-indentation-mode-hook
+    (lambda nil
+      (define-key purescript-indentation-mode-map (kbd "C-d") nil))))
 
 (message "loaded purescript support from purescript.el")
