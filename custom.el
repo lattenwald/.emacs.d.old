@@ -66,7 +66,7 @@
  '(tramp-default-method "ssh")
  '(tramp-ssh-controlmaster-options
    "-o ControlMaster=auto -o ControlPath='~/.ssh/master-%%r@%%h:%%p' -o ControlPersist=yes")
- '(tramp-use-ssh-controlmaster-options t)
+ '(tramp-use-ssh-controlmaster-options nil)
  '(version-control t)
  '(whitespace-style (quote (face trailing space-before-tab empty))))
 (custom-set-faces
