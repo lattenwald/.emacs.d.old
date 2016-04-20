@@ -3,6 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ag-ignore-list (quote ("bower_components" "output")))
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
  '(company-dabbrev-downcase nil)
@@ -29,6 +30,7 @@
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(flycheck-completion-system (quote ido))
  '(flycheck-ghc-args (quote ("-fno-warn-unused-do-bind")))
+ '(flycheck-perl-include-path (quote ("." "lib" "../../lib")))
  '(flycheck-psc-executable "psc-ide-client")
  '(git-commit-fill-column 150)
  '(global-company-mode t)
@@ -37,6 +39,7 @@
  '(global-whitespace-mode t)
  '(haskell-ask-also-kill-buffers nil)
  '(haskell-process-type (quote stack-ghci))
+ '(haskell-tags-on-save t)
  '(ido-buffer-disable-smart-matches nil)
  '(ido-enable-flex-matching t)
  '(ido-use-faces nil)

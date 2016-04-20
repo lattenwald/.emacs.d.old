@@ -1,17 +1,6 @@
-(use-package rainbow-delimiters
-  :ensure t
-  :pin melpa-stable)
-
 (use-package inf-ruby
   :ensure t
   :pin melpa-stable)
-
-(use-package js2-mode
-  :ensure t
-  :pin melpa-stable
-  :config
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-  (add-to-list 'interpreter-mode-alist '("node" . js2-mode)))
 
 (use-package web-beautify
   :ensure t
@@ -33,3 +22,15 @@
 
 (add-to-list 'load-path "~/.emacs.d/git/tintin-mode")
 (require 'tintin-mode)
+
+(use-package ack
+  :ensure t)
+
+(use-package gist
+  :ensure t
+  :pin melpa-stable)
+
+(use-package perlbrew
+  :ensure t
+  :config
+  (perlbrew-use "perl-5.10.1"))

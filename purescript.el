@@ -29,7 +29,9 @@
   (eval-after-load 'flycheck '(flycheck-purescript-setup)))
 
 (use-package psc-ide
-  :ensure t)
+  :ensure t
+  :config
+  (define-key psc-ide-mode-map (kbd "C-c C-m") 'psc-ide-load-module))
 
 (use-package repl-toggle
   :ensure t

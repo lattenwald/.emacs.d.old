@@ -273,7 +273,9 @@
 
 (use-package flycheck
   :ensure t
-  :pin melpa-stable)
+  :pin melpa-stable
+  :config
+  (add-hook 'cperl-mode-hook 'flycheck-mode t))
 
 (use-package go-mode
   :ensure t)
@@ -357,6 +359,13 @@
   :config
   (add-hook 'elm-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'align-load-hook 'elm-align-rules))
+
+(use-package js2-mode
+  :ensure t
+  :pin melpa-stable
+  :config
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+  (add-to-list 'interpreter-mode-alist '("node" . js2-mode)))
 
 (add-hook 'after-init-hook 'electric-pair-mode)
 
