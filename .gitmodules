@@ -7,3 +7,6 @@
 [submodule "git/tintin-mode"]
 	path = git/tintin-mode
 	url = git@github.com:sunwayforever/tintin-mode.git
+[submodule "git/flycheck-purescript"]
+	path = git/flycheck-purescript
+	url = git@github.com:bsermons/flycheck-purescript.git

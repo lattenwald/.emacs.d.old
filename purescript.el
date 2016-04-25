@@ -22,9 +22,8 @@
   :config
   (add-hook 'purescript-mode-hook 'inferior-psci-mode))
 
+(add-to-list 'load-path "~/.emacs.d/git/flycheck-purescript")
 (use-package flycheck-purescript
-  :ensure t
-  :pin melpa-stable
   :config
   (eval-after-load 'flycheck '(flycheck-purescript-setup)))
 
