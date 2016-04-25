@@ -19,6 +19,8 @@
 (setq-default tab-width 4
               electric-pair-mode t
               tramp-use-ssh-controlmaster-options nil)
+(global-set-key (kbd "C-<prior>") nil)
+(global-set-key (kbd "C-<next>") nil)
 (server-start)
 
 ;;; Moving between windows
@@ -198,7 +200,8 @@
 (use-package whitespace
   :diminish global-whitespace-mode
   :config
-  (add-hook 'before-save-hook 'whitespace-cleanup))
+  ;; (add-hook 'before-save-hook 'whitespace-cleanup)
+  )
 
 (use-package sunrise-commander
   :ensure t)
