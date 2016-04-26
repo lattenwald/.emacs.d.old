@@ -35,6 +35,7 @@
  '(git-commit-fill-column 150)
  '(global-company-mode t)
  '(global-fixmee-mode t)
+ '(global-flycheck-mode t)
  '(global-linum-mode t)
  '(global-whitespace-mode t)
  '(haskell-ask-also-kill-buffers nil)
