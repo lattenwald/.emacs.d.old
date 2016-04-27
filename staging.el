@@ -34,3 +34,6 @@
   :ensure t
   :config
   (perlbrew-use "perl-5.10.1"))
+
+(use-package nlinum
+  :ensure t)
