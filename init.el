@@ -200,7 +200,7 @@
 (use-package whitespace
   :diminish global-whitespace-mode
   :config
-  ;; (add-hook 'before-save-hook 'whitespace-cleanup)
+  (add-hook 'before-save-hook 'whitespace-cleanup)
   )
 
 (use-package sunrise-commander
