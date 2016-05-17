@@ -245,7 +245,12 @@
   :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.ledger$" . ledger-mode))
-  (add-to-list 'auto-mode-alist '("ledger.journal$" . ledger-mode)))
+  (add-to-list 'auto-mode-alist '("ledger.journal$" . ledger-mode))
+  (add-hook 'ledger-mode-hook (lambda nil
+                                (setq-local comment-start "; ")
+                                (setq-local comment-end "")
+                                ))
+  )
 
 (use-package ess
   :ensure t

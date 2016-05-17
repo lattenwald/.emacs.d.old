@@ -37,3 +37,7 @@
 
 (use-package nlinum
   :ensure t)
+
+(use-package dockerfile-mode
+  :ensure t
+  :pin melpa-stable)
