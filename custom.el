@@ -31,7 +31,7 @@
  '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(flycheck-completion-system (quote ido))
  '(flycheck-ghc-args (quote ("-fno-warn-unused-do-bind")))
- '(flycheck-perl-include-path (quote ("." "lib" "../../lib")))
+ '(flycheck-perl-include-path (quote ("." "lib" "../../lib" "../api")))
  '(flycheck-psc-executable "psc")
  '(git-commit-fill-column 150)
  '(global-company-mode t)

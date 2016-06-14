@@ -41,3 +41,6 @@
 (use-package dockerfile-mode
   :ensure t
   :pin melpa-stable)
+
+(use-package apache-mode
+  :ensure t)
