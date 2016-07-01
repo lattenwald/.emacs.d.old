@@ -283,7 +283,8 @@
   :ensure t
   :pin melpa-stable
   :config
-  (add-hook 'cperl-mode-hook 'flycheck-mode t))
+  (add-hook 'cperl-mode-hook 'flycheck-mode t)
+  (add-hook 'purescript-mode-hook 'flycheck-mode t))
 
 (use-package go-mode
   :ensure t)
