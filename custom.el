@@ -7,7 +7,7 @@
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
  '(company-dabbrev-downcase nil)
- '(company-global-modes (quote (\(not\ ledger-mode\))))
+ '(company-global-modes (quote (not ledger-mode)))
  '(company-idle-delay 0.15)
  '(cperl-auto-newline-after-colon t)
  '(cperl-close-paren-offset 0)
@@ -63,7 +63,9 @@
  '(projectile-ignored-project-function (quote file-remote-p))
  '(psc-ide-executable "psc-ide-client")
  '(psc-ide-server-executable "psc-ide-server")
- '(purescript-mode-hook (quote (turn-on-purescript-indentation)))
+ '(purescript-mode-hook
+   (quote
+    (turn-on-purescript-indentation haskell-decl-scan-mode inferior-psci-mode flycheck-mode)))
  '(repl-toggle-mode t)
  '(sr-listing-switches "--group-directories-first -alDhgG")
  '(sr-show-hidden-files t)

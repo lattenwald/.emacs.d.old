@@ -43,7 +43,6 @@
   :pin melpa-stable
   :config
   (add-hook 'align-load-hook 'purescript-align-rules)
-  (add-hook 'purescript-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'purescript-indentation-mode-hook
             (lambda nil
               (define-key purescript-indentation-mode-map (kbd "C-d") nil))))
