@@ -30,7 +30,8 @@
 (use-package psc-ide
   :ensure t
   :config
-  (define-key psc-ide-mode-map (kbd "C-c C-m") 'psc-ide-load-module))
+  (define-key psc-ide-mode-map (kbd "C-c C-m") 'psc-ide-load-module)
+  (define-key purescript-mode-map (kbd "C-c C-t") 'psc-ide-show-type))
 
 (use-package repl-toggle
   :ensure t
@@ -43,6 +44,8 @@
   :pin melpa-stable
   :config
   (add-hook 'align-load-hook 'purescript-align-rules)
+  (add-hook 'purescript-mode-hook 'purescript-indentation-mode)
+  (add-hook 'purescript-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'purescript-indentation-mode-hook
             (lambda nil
               (define-key purescript-indentation-mode-map (kbd "C-d") nil))))

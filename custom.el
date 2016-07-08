@@ -63,9 +63,6 @@
  '(projectile-ignored-project-function (quote file-remote-p))
  '(psc-ide-executable "psc-ide-client")
  '(psc-ide-server-executable "psc-ide-server")
- '(purescript-mode-hook
-   (quote
-    (turn-on-purescript-indentation haskell-decl-scan-mode inferior-psci-mode flycheck-mode)))
  '(repl-toggle-mode t)
  '(sr-listing-switches "--group-directories-first -alDhgG")
  '(sr-show-hidden-files t)
