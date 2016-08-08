@@ -22,4 +22,10 @@
   ;; default node name to emacs@localhost
   (setq inferior-erlang-machine-options '("-sname" "emacs")))
 
+(use-package flycheck-dialyzer
+  :ensure t
+  :config
+  ;; (require 'flycheck-dialyzer)
+  (add-hook 'erlang-mode-hook 'flycheck-mode))
+
 (message "loaded erlang support from edts.el")

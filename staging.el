@@ -56,3 +56,15 @@
       (define-key markdown-mode-map (kbd "M-<up>") nil)
       (define-key markdown-mode-map (kbd "M-<down>") nil)
       )))
+
+(defun insert-file-name ()
+  "Insert the full path file name into the current buffer."
+  (interactive)
+  (insert (buffer-file-name (window-buffer (minibuffer-selected-window)))))
+
+(defun filename ()
+  "Copy the full path of the current buffer."
+  (interactive)
+  (kill-new (buffer-file-name (window-buffer (minibuffer-selected-window)))))
+
+(global-set-key (kbd "M-i") 'insert-file-name)

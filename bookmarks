@@ -2,7 +2,11 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("dev/admin"
+(("dev/scripts"
+ (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/scripts/ | /scp:dev:/home/yy/git/otvet.mail.ru/scripts/")
+ (sr-directories "~/git/otvet.mail.ru/scripts/" "/scp:dev:/home/yy/git/otvet.mail.ru/scripts/")
+ (handler . sr-checkpoint-handler))
+("dev/admin"
  (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/admin/ | /scp:dev:/home/yy/git/otvet.mail.ru/perl/admin/")
  (sr-directories "~/git/otvet.mail.ru/perl/admin/" "/scp:dev:/home/yy/git/otvet.mail.ru/perl/admin/")
  (handler . sr-checkpoint-handler))
