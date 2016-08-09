@@ -338,7 +338,9 @@
 
 (use-package nginx-mode
   :ensure t
-  :pin melpa-stable)
+  :pin melpa-stable
+  :config
+  (defvaralias 'font-lock-operator-face 'font-lock-keyword-face))
 
 (use-package vimrc-mode
   :ensure t)
