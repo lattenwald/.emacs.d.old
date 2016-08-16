@@ -73,7 +73,8 @@
    "-o ControlMaster=auto -o ControlPath='~/.ssh/master-%%r@%%h:%%p' -o ControlPersist=yes")
  '(tramp-use-ssh-controlmaster-options nil)
  '(version-control t)
- '(whitespace-style (quote (face trailing space-before-tab empty))))
+ '(whitespace-style (quote (face trailing space-before-tab empty)))
+ '(yas-global-mode t nil (yasnippet)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

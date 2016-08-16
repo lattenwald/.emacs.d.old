@@ -68,3 +68,11 @@
   (kill-new (buffer-file-name (window-buffer (minibuffer-selected-window)))))
 
 (global-set-key (kbd "M-i") 'insert-file-name)
+
+;;; elixir
+(use-package alchemist
+  :ensure t)
+
+(use-package yasnippet
+  :ensure t
+  :pin melpa-stable)

@@ -385,7 +385,7 @@
 
 (load "~/.emacs.d/purescript.el")
 
-(load "~/.emacs.d/edts.el")
+(load "~/.emacs.d/erlang.el")
 
 (load "~/.emacs.d/staging.el")
 

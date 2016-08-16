@@ -28,4 +28,4 @@
   ;; (require 'flycheck-dialyzer)
   (add-hook 'erlang-mode-hook 'flycheck-mode))
 
-(message "loaded erlang support from edts.el")
+(message "loaded erlang support from erlang.el")
