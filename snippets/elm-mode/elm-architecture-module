@@ -1,0 +1,28 @@
+# -*- mode: snippet -*-
+# name: elm architecture template
+# key: elm
+# expand-env ((yas-indent-line 'fixed))
+# --
+import Html exposing ($1)
+
+
+-- MODEL
+
+type alias Model = { $2 }
+
+
+-- UPDATE
+
+type Msg = Reset | $3
+
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    Reset -> $4
+
+
+-- VIEW
+
+view : Model -> Html Msg
+view model =
+  $5
