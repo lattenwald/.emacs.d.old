@@ -10,3 +10,6 @@
 [submodule "git/flycheck-purescript"]
 	path = git/flycheck-purescript
 	url = git@github.com:bsermons/flycheck-purescript.git
+[submodule "git/diminish.el"]
+	path = git/diminish.el
+	url = https://github.com/myrjola/diminish.el

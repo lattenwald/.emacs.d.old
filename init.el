@@ -56,11 +56,13 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 (package-initialize)
 
+(add-to-list 'load-path "~/.emacs.d/git/diminish.el")
+(require 'diminish)
+
 (add-to-list 'load-path "~/.emacs.d/git/use-package")
 ;; (eval-when-compile
 ;;   (require 'use-package))
 (require 'use-package)
-(require 'diminish)                ;; if you use :diminish
 
 (use-package pkg-info ;; dependency for flycheck, projectile
   :ensure t
