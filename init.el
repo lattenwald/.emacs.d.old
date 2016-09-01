@@ -3,7 +3,7 @@
 (load custom-file 'noerror)
 
 ;;; Look and feel
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'wombat)
 ;; (menu-bar-mode 0)
 (tool-bar-mode 0)
@@ -155,9 +155,33 @@
               (smart-tabs-advice cperl-indent-line cperl-indent-level)
               (electric-pair-mode t))))
 
+(use-package perlbrew
+  :ensure t
+  :config
+  (perlbrew-use "perl-5.10.1"))
+
+(use-package dockerfile-mode
+  :ensure t
+  :pin melpa-stable)
+
 (use-package button-lock
   :ensure t
   :diminish button-lock-mode)
+
+(use-package apache-mode
+  :ensure t)
+
+(use-package markdown-mode
+  :ensure t
+  :pin melpa-stable
+  :config
+  (eval-after-load "markdown-mode"
+    (progn
+      (define-key markdown-mode-map (kbd "M-<left>") nil)
+      (define-key markdown-mode-map (kbd "M-<right>") nil)
+      (define-key markdown-mode-map (kbd "M-<up>") nil)
+      (define-key markdown-mode-map (kbd "M-<down>") nil)
+      )))
 
 (use-package fixmee
   :ensure t

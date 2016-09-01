@@ -20,6 +20,9 @@
  '(cperl-highlight-variables-indiscriminately t)
  '(cperl-indent-parens-as-block t)
  '(cua-mode t nil (cua-base))
+ '(custom-safe-themes
+   (quote
+    ("b0ab5c9172ea02fba36b974bbd93bc26e9d26f379c9a29b84903c666a5fde837" "e56ee322c8907feab796a1fb808ceadaab5caba5494a50ee83a13091d5b1a10c" default)))
  '(delete-old-versions t)
  '(exec-path-from-shell-arguments (quote ("-l")))
  '(fixmee--listview-local-only t t)

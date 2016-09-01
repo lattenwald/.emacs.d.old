@@ -20,9 +20,6 @@
   (eval-after-load 'css-mode
     '(define-key css-mode-map (kbd "C-c b") 'web-beautify-css)))
 
-(add-to-list 'load-path "~/.emacs.d/git/tintin-mode")
-(require 'tintin-mode)
-
 (use-package ack
   :ensure t)
 
@@ -30,32 +27,8 @@
   :ensure t
   :pin melpa-stable)
 
-(use-package perlbrew
-  :ensure t
-  :config
-  (perlbrew-use "perl-5.10.1"))
-
 (use-package nlinum
   :ensure t)
-
-(use-package dockerfile-mode
-  :ensure t
-  :pin melpa-stable)
-
-(use-package apache-mode
-  :ensure t)
-
-(use-package markdown-mode
-  :ensure t
-  :pin melpa-stable
-  :config
-  (eval-after-load "markdown-mode"
-    (progn
-      (define-key markdown-mode-map (kbd "M-<left>") nil)
-      (define-key markdown-mode-map (kbd "M-<right>") nil)
-      (define-key markdown-mode-map (kbd "M-<up>") nil)
-      (define-key markdown-mode-map (kbd "M-<down>") nil)
-      )))
 
 (defun insert-file-name ()
   "Insert the full path file name into the current buffer."
@@ -94,3 +67,5 @@
 
 (use-package racket-mode
   :ensure t)
+
+(message "loaded some stuff from staging.el")
