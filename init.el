@@ -4,6 +4,7 @@
 
 ;;; Look and feel
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'material)
 (load-theme 'wombat)
 ;; (menu-bar-mode 0)
 (tool-bar-mode 0)
