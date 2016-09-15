@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: rebar3 app.src
+# key: app
+# --
+{application, $1,
+ [{description, "$2"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [kernel, stdlib]},
+  {mod, {$3, []}},
+  {env, []}
+ ]}
