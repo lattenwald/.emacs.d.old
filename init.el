@@ -30,6 +30,14 @@
 (global-set-key (kbd "M-<up>") 'windmove-up)
 (global-set-key (kbd "M-<down>") 'windmove-down)
 
+;; protect my keybindings
+(defun protect-my-bindings (bad-map)
+  (progn
+      (define-key bad-map (kbd "M-<left>") nil)
+      (define-key bad-map (kbd "M-<right>") nil)
+      (define-key bad-map (kbd "M-<up>") nil)
+      (define-key bad-map (kbd "M-<down>") nil)))
+
 ;;; Moving in buffer
 (global-set-key (kbd "<home>") 'beginning-of-line)
 (global-set-key (kbd "<end>") 'end-of-line)
@@ -177,12 +185,7 @@
   :pin melpa-stable
   :config
   (eval-after-load "markdown-mode"
-    (progn
-      (define-key markdown-mode-map (kbd "M-<left>") nil)
-      (define-key markdown-mode-map (kbd "M-<right>") nil)
-      (define-key markdown-mode-map (kbd "M-<up>") nil)
-      (define-key markdown-mode-map (kbd "M-<down>") nil)
-      )))
+  (protect-my-bindings markdown-mode-map)))
 
 (use-package fixmee
   :ensure t
@@ -291,17 +294,13 @@
   :ensure t
   :config
   (eval-after-load "org"
-    '(progn
-       (define-key org-mode-map (kbd "<M-left>") nil)
-       (define-key org-mode-map (kbd "<M-right>") nil)
-       (define-key org-mode-map (kbd "<M-up>") nil)
-       (define-key org-mode-map (kbd "<M-down>") nil)
-       (define-key org-mode-map (kbd "<C-M-left>") 'org-metaleft)
-       (define-key org-mode-map (kbd "<C-M-right>") 'org-metaright)
-       (define-key org-mode-map (kbd "<C-M-up>") 'org-metaup)
-       (define-key org-mode-map (kbd "<C-M-down>") 'org-metadown)
-       (define-key org-mode-map (kbd "<C-M-return>") 'org-insert-heading)
-       )))
+    (progn
+      (protect-my-bindings org-mode-map)
+      (define-key org-mode-map (kbd "<C-M-left>") 'org-metaleft)
+      (define-key org-mode-map (kbd "<C-M-right>") 'org-metaright)
+      (define-key org-mode-map (kbd "<C-M-up>") 'org-metaup)
+      (define-key org-mode-map (kbd "<C-M-down>") 'org-metadown)
+      (define-key org-mode-map (kbd "<C-M-return>") 'org-insert-heading))))
 
 (use-package linum
   :ensure t)
