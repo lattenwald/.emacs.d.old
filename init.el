@@ -358,10 +358,6 @@
   :ensure t
   :pin melpa-stable)
 
-(use-package csharp-mode
-  :ensure t
-  :pin melpa-stable)
-
 (use-package nginx-mode
   :ensure t
   :pin melpa-stable
