@@ -1,9 +1,11 @@
 (use-package auto-highlight-mode
   :config
-  (eval-after-load "auto-highlight-symbol-mode"
-    (progn (protect-my-bindings auto-highlight-symbol-mode-map))))
+  (add-hook 'auto-highlight-symbol-mode
+            (lambda ()
+              (protect-my-bindings auto-highlight-symbol-mode-map))))
 
 (use-package edts
+  :disabled t
   :ensure t
   :config
   (require 'edts-start)
@@ -17,7 +19,11 @@
           (re-search-forward re nil 'move-point)
           (push (cons (match-string 2) (match-string 1)) vsn-urls))
         (kill-buffer)
-        vsn-urls))))
+        vsn-urls)))
+  (eval-after-load "edts-mode"
+    (progn
+      (define-key edts-mode-map (kbd "C-h f") 'edts-show-doc-under-point)
+      (define-key edts-mode-map (kbd "C-h F") 'edts-find-doc))))
 
 (use-package erlang
   :ensure t
