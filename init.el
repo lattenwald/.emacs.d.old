@@ -3,9 +3,6 @@
 (load custom-file 'noerror)
 
 ;;; Look and feel
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-;; (load-theme 'material)
-(load-theme 'wombat)
 ;; (menu-bar-mode 0)
 (tool-bar-mode 0)
 (column-number-mode t)
@@ -72,6 +69,15 @@
 ;; (eval-when-compile
 ;;   (require 'use-package))
 (require 'use-package)
+
+;;; look and feel take 2, theme
+(use-package color-theme-modern
+  :ensure t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+;; (load-theme 'material)
+;; (load-theme 'wombat)
+(load-theme 'cobalt t t)
+(enable-theme 'cobalt)
 
 (use-package pkg-info ;; dependency for flycheck, projectile
   :ensure t
@@ -149,8 +155,9 @@
 
 (use-package cperl-mode
   :ensure t
-  :config
+  :init
   (defalias 'perl-mode 'cperl-mode)
+  :config
   (defvaralias 'cperl-indent-level 'tab-width)
   (define-key cperl-mode-map (kbd "C-h f") 'cperl-perldoc)
   (defadvice cperl-backward-to-start-of-continued-exp (after indentation-fix)
