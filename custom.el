@@ -24,6 +24,8 @@
    (quote
     ("b0ab5c9172ea02fba36b974bbd93bc26e9d26f379c9a29b84903c666a5fde837" "e56ee322c8907feab796a1fb808ceadaab5caba5494a50ee83a13091d5b1a10c" default)))
  '(delete-old-versions t)
+ '(edts-api-async-node-init t)
+ '(edts-man-root "/Users/aleksandrkusev/.emacs.d/edts/doc/19.0")
  '(exec-path-from-shell-arguments (quote ("-l")))
  '(fixmee--listview-local-only t t)
  '(fixmee-notice-regexp
@@ -51,6 +53,7 @@
  '(ido-use-faces nil)
  '(indent-tabs-mode nil)
  '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(js2-strict-missing-semi-warning nil)
  '(kept-new-versions 6)
@@ -59,8 +62,12 @@
  '(ledger-post-use-completion-engine :ido)
  '(linum-format (quote dynamic))
  '(lua-indent-level 2)
+ '(magit-diff-refine-hunk (quote all))
  '(ns-use-srgb-colorspace nil)
  '(org-support-shift-select t)
+ '(package-selected-packages
+   (quote
+    (color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints stack-mode spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nlinum nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent helm-ag go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish company-ghc apache-mode alchemist ag ack)))
  '(powerline-height 20)
  '(projectile-global-mode t)
  '(projectile-ignored-project-function (quote file-remote-p))
@@ -73,7 +80,7 @@
  '(sr-speedbar-right-side nil t)
  '(tramp-default-method "ssh")
  '(tramp-ssh-controlmaster-options
-   "-o ControlMaster=auto -o ControlPath='~/.ssh/master-%%r@%%h:%%p' -o ControlPersist=yes")
+   "-o ControlMaster=auto -o ControlPath='~/.ssh/master-%%r@%%h:%%p' -o ControlPersist=yes" t)
  '(tramp-use-ssh-controlmaster-options nil)
  '(version-control t)
  '(whitespace-style (quote (face trailing space-before-tab empty))))
@@ -82,7 +89,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Hack"))))
+ '(default ((t (:family "Hack"))))
  '(cperl-array-face ((t (:inherit font-lock-variable-name-face))))
  '(cperl-hash-face ((t (:inherit font-lock-variable-name-face))))
  '(fixmee-notice-face ((t (:background "yellow1" :foreground "black"))))
