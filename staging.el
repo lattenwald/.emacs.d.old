@@ -68,4 +68,7 @@
 (use-package racket-mode
   :ensure t)
 
+(use-package neotree
+  :ensure t)
+
 (message "loaded some stuff from staging.el")
