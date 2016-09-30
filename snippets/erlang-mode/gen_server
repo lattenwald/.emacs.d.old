@@ -1,0 +1,44 @@
+# -*- mode: snippet -*-
+# name: gen_server callbacks
+# key: gen_server
+# --
+-behaviour(gen_server).
+
+-export([init/1, terminate/2, code_change/3]).
+-export([handle_call/3, handle_cast/2, handle_info/2]).
+-export([start/0, start_link/0]).
+
+%%====================================================================
+%% API
+%%====================================================================
+
+start() ->
+    %% start(Module, Args, Options) -> Result
+    %% start(ServerName, Module, Args, Options) -> Result
+    gen_server:start(?MODULE, [], []).
+
+start_link() ->
+    gen_server:start_link(?MODULE, [], []).
+
+%%====================================================================
+%% Callbacks
+%%====================================================================
+
+init([]) ->
+    {ok, []}.
+
+terminate(_Reason, _State) ->
+    ok.
+
+code_change(_OldVsn, State, _Extra) ->
+    {ok, State}.
+
+handle_call(_Data, _From, State) ->
+    {noreply, State}.
+
+handle_cast(_Data, State) ->
+    {noreply, State}.
+
+handle_info(_Data, State) ->
+    {noreply, State}.
+$1
