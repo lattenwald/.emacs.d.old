@@ -1,8 +1,57 @@
+;; flycheck erlang stuff stolen from
+;; http://blog.erlware.org/getting-flymake-and-rebar-to-play-nice/
+
+(defun ebm-find-rebar-top-recr (dirname)
+  (let* ((project-dir (locate-dominating-file dirname "rebar.config")))
+    (if project-dir
+        (let* ((parent-dir (file-name-directory (directory-file-name project-dir)))
+               (top-project-dir (if (and parent-dir (not (string= parent-dir "/")))
+                                    (ebm-find-rebar-top-recr parent-dir)
+                                  nil)))
+          (if top-project-dir
+              top-project-dir
+            project-dir))
+      project-dir)))
+
+(defun ebm-find-rebar-top ()
+  (interactive)
+  (let* ((dirname (file-name-directory (buffer-file-name)))
+         (project-dir (ebm-find-rebar-top-recr dirname)))
+    (if project-dir
+        project-dir
+      (erlang-flymake-get-app-dir))))
+
 (use-package auto-highlight-mode
   :config
   (add-hook 'auto-highlight-symbol-mode
             (lambda ()
               (protect-my-bindings auto-highlight-symbol-mode-map))))
+
+(defun ebm-directory-dirs (dir name)
+  "Find all directories in DIR."
+  (unless (file-directory-p dir)
+    (error "Not a directory `%s'" dir))
+  (let ((dir (directory-file-name dir))
+        (dirs '())
+        (files (directory-files dir nil nil t)))
+    (dolist (file files)
+      (unless (member file '("." ".."))
+        (let ((absolute-path (expand-file-name (concat dir "/" file))))
+          (when (file-directory-p absolute-path)
+            (if (string= file name)
+                (setq dirs (append (cons absolute-path
+                                         (ebm-directory-dirs absolute-path name))
+                                   dirs))
+              (setq dirs (append
+                          (ebm-directory-dirs absolute-path name)
+                          dirs)))))))
+    dirs))
+
+(defun ebm-get-deps-code-path-dirs ()
+  (ebm-directory-dirs (ebm-find-rebar-top) "ebin"))
+
+(defun ebm-get-deps-include-dirs ()
+  (ebm-directory-dirs (ebm-find-rebar-top) "include"))
 
 (use-package edts
   :disabled t
@@ -32,6 +81,13 @@
     (progn
       (define-key erlang-mode-map (kbd ">") nil)
       (define-key erlang-mode-map (kbd "<RET>") 'newline-and-indent)))
+  (add-hook 'erlang-mode-hook
+            (lambda ()
+              (mapc (lambda (a) (add-to-list 'flycheck-erlang-library-path a))
+                    (ebm-get-deps-code-path-dirs))
+              ;; (mapc (lambda (a) (add-to-list 'flycheck-erlang-include-path a))
+              ;;       (ebm-get-deps-include-dirs)))
+            ))
   ;; (setq erlang-root-dir "/usr/local/Cellar/erlang/19.0.2/lib/erlang")
   ;; (add-to-list 'exec-path "/usr/local/Cellar/erlang/19.0.2/lib/erlang/bin")
 
