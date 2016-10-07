@@ -68,7 +68,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (neotree color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints stack-mode spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nlinum nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent helm-ag go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish company-ghc apache-mode alchemist ag ack)))
+    (helm-projectile evil evil-mode neotree color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints stack-mode spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nlinum nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent helm-ag go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish company-ghc apache-mode alchemist ag ack)))
  '(powerline-height 20)
  '(projectile-global-mode t)
  '(projectile-ignored-project-function (quote file-remote-p))

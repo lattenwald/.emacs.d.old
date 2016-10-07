@@ -72,7 +72,8 @@
 
 ;;; look and feel take 2, theme
 (use-package color-theme-modern
-  :ensure t)
+  :ensure color-theme-modern
+  :config)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 ;; (load-theme 'material)
 ;; (load-theme 'wombat)
@@ -216,9 +217,9 @@
   :config
   :bind ("M-[" . align))
 
-(use-package helm-core
-  :pin melpa-stable
-  :ensure t)
+;; (use-package helm-core
+;;   :pin melpa-stable
+;;   :ensure t)
 
 (use-package helm
   :pin melpa-stable
@@ -400,12 +401,28 @@
   (add-hook 'elm-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'align-load-hook 'elm-align-rules))
 
+(use-package flycheck-elm
+  :ensure t
+  :config
+  (eval-after-load 'flycheck
+    '(flycheck-elm-setup))
+  (add-hook 'elm-mode-hook 'flycheck-mode))
+
 (use-package js2-mode
   :ensure t
   :pin melpa-stable
   :config
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   (add-to-list 'interpreter-mode-alist '("node" . js2-mode)))
+
+(use-package yasnippet
+ :ensure t
+ :pin melpa-stable
+ :config
+ (yas-global-mode 1)
+ (add-hook 'elm-mode-hook
+           '(lambda () (set (make-local-variable 'yas-indent-line) 'fixed)))
+ )
 
 (add-hook 'after-init-hook 'electric-pair-mode)
 

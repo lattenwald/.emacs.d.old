@@ -46,29 +46,22 @@
 (use-package alchemist
   :ensure t)
 
-(use-package yasnippet
- :ensure t
- :pin melpa-stable
- :config
- (yas-global-mode 1)
- (add-hook 'elm-mode-hook
-           '(lambda () (set (make-local-variable 'yas-indent-line) 'fixed)))
- )
-
 (use-package elm-yasnippets
  :ensure t)
-
-(use-package flycheck-elm
-  :ensure t
-  :config
-  (eval-after-load 'flycheck
-    '(flycheck-elm-setup))
-  (add-hook 'elm-mode-hook 'flycheck-mode))
 
 (use-package racket-mode
   :ensure t)
 
 (use-package neotree
+  :bind ("C-f" . neotree-toggle)
   :ensure t)
+
+(use-package evil
+  :ensure t
+  :pin melpa-stable)
+
+(use-package helm-projectile
+  :ensure t
+  :pin melpa-stable)
 
 (message "loaded some stuff from staging.el")
