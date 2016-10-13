@@ -16,6 +16,10 @@
                  (regexp . "\\(\\s-+\\)\\(<-\\|←\\)\\s-+")
                  (modes quote (haskell-mode literate-haskell-mode)))))
 
+(use-package buttercup
+  :ensure t
+  :pin melpa-stable)
+
 (use-package haskell-mode
   :ensure t
   :config
