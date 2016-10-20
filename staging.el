@@ -64,4 +64,7 @@
   :ensure t
   :pin melpa-stable)
 
+(use-package bookmark+
+  :ensure t)
+
 (message "loaded some stuff from staging.el")
