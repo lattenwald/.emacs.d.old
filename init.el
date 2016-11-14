@@ -1,3 +1,5 @@
+(require 'rx)
+
 ;; custom file
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (load custom-file 'noerror)
@@ -286,9 +288,7 @@
   (add-to-list 'auto-mode-alist '("ledger.journal$" . ledger-mode))
   (add-hook 'ledger-mode-hook (lambda nil
                                 (setq-local comment-start "; ")
-                                (setq-local comment-end "")
-                                ))
-  )
+                                (setq-local comment-end ""))))
 
 (use-package ess
   :ensure t
@@ -318,7 +318,38 @@
   :pin melpa-stable
   :config
   (add-hook 'cperl-mode-hook 'flycheck-mode t)
-  (add-hook 'purescript-mode-hook 'flycheck-mode t))
+  (add-hook 'purescript-mode-hook 'flycheck-mode t)
+  (flycheck-define-checker hledger-check
+    "A ledger checker using hledger"
+    :command ("hledger"
+              "-f" source
+              "accounts")
+    :error-patterns
+    ((error
+      line-start
+      "hledger: "
+      (minimal-match (one-or-more not-newline)) " error in "
+      (one-or-more not-newline)
+      "(line " line
+      ", column " column "):" "\n"
+      (message (one-or-more anything))
+      "\n\n"))
+    :modes ledger-mode)
+
+  (flycheck-define-checker ledger-check
+    "A ledger checker using ledger"
+    :command ("ledger"
+              "-f" source
+              "source")
+    :error-patterns
+    ((error
+      line-start "While parsing file " (one-or-more not-newline) "\n"
+      (minimal-match (one-or-more not-newline)) ", lines "
+      line "-" (one-or-more num) ":" "\n"
+      (message (minimal-match (one-or-more anything))
+               "\nError: " (one-or-more not-newline))))
+    :modes ledger-mode)
+  )
 
 (use-package go-mode
   :ensure t)

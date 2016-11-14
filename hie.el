@@ -25,7 +25,7 @@
   :config
   (add-hook 'interactive-haskell-mode-hook (lambda nil (define-key interactive-haskell-mode-map (kbd "C-c C-t") nil)))
   (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
-  (add-hook 'haskell-mode-hook 'hie-mode)
+  ;; (add-hook 'haskell-mode-hook 'hie-mode)
   (add-hook 'align-load-hook 'haskell-align-rules))
 
 
