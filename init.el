@@ -457,8 +457,8 @@
 
 (add-hook 'after-init-hook 'electric-pair-mode)
 
-;; (load "~/.emacs.d/haskell.el")
-(load "~/.emacs.d/hie.el")
+(load "~/.emacs.d/haskell.el")
+;; (load "~/.emacs.d/hie.el")
 
 (load "~/.emacs.d/purescript.el")
 

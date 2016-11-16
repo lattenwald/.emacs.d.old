@@ -38,7 +38,4 @@
   (autoload 'ghc-debug "ghc" nil t)
   (add-hook 'haskell-mode-hook 'ghc-init))
 
-(add-to-list 'load-path "~/.emacs.d/git/haskell-ide-engine/elisp")
-(load-file  "~/.emacs.d/git/haskell-ide-engine/elisp/hie.el")
-
 (message "loaded haskell support from hie.el")
