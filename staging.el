@@ -27,9 +27,6 @@
   :ensure t
   :pin melpa-stable)
 
-(use-package nlinum
-  :ensure t)
-
 (defun insert-file-name ()
   "Insert the full path file name into the current buffer."
   (interactive)
@@ -56,15 +53,14 @@
   :bind ("C-f" . neotree-toggle)
   :ensure t)
 
-(use-package evil
-  :ensure t
-  :pin melpa-stable)
-
 (use-package helm-projectile
   :ensure t
   :pin melpa-stable)
 
 (use-package bookmark+
+  :ensure t)
+
+(use-package pcre2el
   :ensure t)
 
 (message "loaded some stuff from staging.el")
