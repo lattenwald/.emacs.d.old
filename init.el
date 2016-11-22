@@ -326,12 +326,17 @@
               "accounts")
     :error-patterns
     ((error
-      line-start
-      "hledger: "
+      line-start "hledger: "
       (minimal-match (one-or-more not-newline)) " error in "
       (one-or-more not-newline)
       "(line " line
       ", column " column "):" "\n"
+      (message (one-or-more anything))
+      "\n\n")
+     (error
+      line-start "hledger: "
+      (minimal-match (one-or-more not-newline))
+      ":" line ":" column ":\n"
       (message (one-or-more anything))
       "\n\n"))
     :modes ledger-mode)
