@@ -3,7 +3,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ag-arguments nil)
+ '(ag-context-lines 0)
+ '(ag-highlight-search t)
  '(ag-ignore-list (quote ("bower_components" "output")))
+ '(ag-reuse-buffers t)
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
@@ -47,6 +51,7 @@
  '(global-linum-mode t)
  '(global-nlinum-mode nil)
  '(global-whitespace-mode t)
+ '(haskell-align-imports-pad-after-name t)
  '(haskell-ask-also-kill-buffers nil)
  '(haskell-process-type (quote stack-ghci))
  '(haskell-tags-on-save t)
@@ -70,7 +75,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (pcre2el bookmark+ buttercup helm-projectile evil-mode neotree color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent helm-ag go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish company-ghc apache-mode alchemist ag ack)))
+    (pcre2el helm-ag bookmark+ buttercup helm-projectile evil-mode neotree color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish company-ghc apache-mode alchemist ag ack)))
  '(pcre-mode nil)
  '(powerline-height 20)
  '(projectile-global-mode t)
