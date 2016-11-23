@@ -20,9 +20,6 @@
   (eval-after-load 'css-mode
     '(define-key css-mode-map (kbd "C-c b") 'web-beautify-css)))
 
-(use-package ack
-  :ensure t)
-
 (use-package gist
   :ensure t
   :pin melpa-stable)
