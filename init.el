@@ -4,6 +4,8 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (load custom-file 'noerror)
 
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;;; Look and feel
 ;; (menu-bar-mode 0)
 (tool-bar-mode 0)
@@ -53,7 +55,6 @@
 (setq show-paren-mode t
       show-paren-style 'expression)
 
-
 ;;; dired
 (setq dired-listing-switches "-al --group-directories-first")
 
@@ -87,10 +88,6 @@
   :pin melpa-stable)
 
 (use-package f ;; dependency for psci
-  :ensure t
-  :pin melpa-stable)
-
-(use-package popup ;; dependency for helm
   :ensure t
   :pin melpa-stable)
 
@@ -219,18 +216,6 @@
   :config
   :bind ("M-[" . align))
 
-;; (use-package helm-core
-;;   :pin melpa-stable
-;;   :ensure t)
-
-(use-package helm
-  :pin melpa-stable
-  :ensure t)
-
-(use-package helm-ag
-  :ensure t
-  :pin melpa-stable)
-
 (use-package spaceline
   :ensure t
   :config
@@ -291,7 +276,9 @@
                                 (setq-local comment-end ""))))
 
 (use-package flycheck-ledger
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'ledger-mode-hook 'flycheck-mode))
 
 (use-package ess
   :ensure t

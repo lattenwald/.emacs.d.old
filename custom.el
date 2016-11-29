@@ -6,7 +6,9 @@
  '(ag-arguments nil)
  '(ag-context-lines 0)
  '(ag-highlight-search t)
- '(ag-ignore-list (quote ("bower_components" "output")))
+ '(ag-ignore-list
+   (quote
+    ("bower_components" "output" "abbrev_defs" "bookmarks" "edts" "smex-items" "ido.last")))
  '(ag-reuse-buffers t)
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
@@ -76,7 +78,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (flycheck-ledger pcre2el helm-ag bookmark+ buttercup helm-projectile evil-mode neotree color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish company-ghc apache-mode alchemist ag)))
+    (neotree hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish company-ghc apache-mode alchemist ag)))
  '(pcre-mode nil)
  '(powerline-height 20)
  '(projectile-global-mode t)
@@ -93,6 +95,7 @@
  '(sr-show-hidden-files t)
  '(sr-speedbar-default-width 20 t)
  '(sr-speedbar-right-side nil t)
+ '(tags-revert-without-query t)
  '(tramp-default-method "ssh")
  '(tramp-ssh-controlmaster-options
    "-o ControlMaster=auto -o ControlPath='~/.ssh/master-%%r@%%h:%%p' -o ControlPersist=yes" t)

@@ -50,14 +50,13 @@
   :bind ("C-f" . neotree-toggle)
   :ensure t)
 
-(use-package helm-projectile
-  :ensure t
-  :pin melpa-stable)
-
 (use-package bookmark+
   :ensure t)
 
 (use-package pcre2el
+  :ensure t)
+
+(use-package hledger-mode
   :ensure t)
 
 ;; setting up fira-code
