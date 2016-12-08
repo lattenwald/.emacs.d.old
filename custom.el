@@ -33,6 +33,7 @@
  '(delete-old-versions t)
  '(edts-api-async-node-init t)
  '(edts-man-root "/Users/aleksandrkusev/.emacs.d/edts/doc/19.0")
+ '(elm-compile-arguments (quote ("--yes" "--warn" "--output=elm.js")))
  '(exec-path-from-shell-arguments (quote ("-l")))
  '(fixmee--listview-local-only t t)
  '(fixmee-notice-regexp
@@ -56,6 +57,8 @@
  '(global-whitespace-mode t)
  '(haskell-align-imports-pad-after-name t)
  '(haskell-ask-also-kill-buffers nil)
+ '(haskell-interactive-types-for-show-ambiguous nil)
+ '(haskell-mode-hook (quote (haskell-decl-scan-mode haskell-indentation-mode)))
  '(haskell-process-type (quote stack-ghci))
  '(haskell-tags-on-save t)
  '(ido-buffer-disable-smart-matches nil)
@@ -78,7 +81,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (neotree hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish company-ghc apache-mode alchemist ag)))
+    (linum-off haskell-mode neotree hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish apache-mode alchemist ag)))
  '(pcre-mode nil)
  '(powerline-height 20)
  '(projectile-global-mode t)

@@ -39,6 +39,13 @@
       (define-key bad-map (kbd "M-<up>") nil)
       (define-key bad-map (kbd "M-<down>") nil)))
 
+;; what face at point
+(defun what-face (pos)
+  (interactive "d")
+  (let ((face (or (get-char-property (point) 'read-face-name)
+                  (get-char-property (point) 'face))))
+    (if face (message "Face: %s" face) (message "No face at %d" pos))))
+
 ;;; Moving in buffer
 (global-set-key (kbd "<home>") 'beginning-of-line)
 (global-set-key (kbd "<end>") 'end-of-line)
@@ -387,9 +394,19 @@
 (use-package elm-mode
   :ensure t
   :pin melpa-stable
+  :bind (:map elm-mode-map
+              ("C-c C-c" . elm-compile-buffer-debug))
   :config
   (add-hook 'elm-mode-hook 'haskell-decl-scan-mode)
-  (add-hook 'align-load-hook 'elm-align-rules))
+  (add-hook 'align-load-hook 'elm-align-rules)
+  (defun elm-compile-buffer-debug (&optional arg)
+    "Compile current elm buffer with --debug if optional argument is present"
+    (interactive)
+    (if current-prefix-arg
+        (let
+            ((elm-compile-arguments (cons "--debug" elm-compile-arguments)))
+          (elm-compile-buffer))
+      (elm-compile-buffer))))
 
 (use-package flycheck-elm
   :ensure t
@@ -415,6 +432,41 @@
  )
 
 (add-hook 'after-init-hook 'electric-pair-mode)
+
+;; setting up fira-code
+;; https://github.com/tonsky/FiraCode/wiki/Setting-up-Emacs
+(when (window-system)
+  (set-default-font "Fira Code"))
+(let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
+               (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
+               (36 . ".\\(?:>\\)")
+               (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
+               (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
+               (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
+               (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
+               (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
+               (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
+               (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
+               (48 . ".\\(?:x[a-zA-Z]\\)")
+               (58 . ".\\(?:::\\|[:=]\\)")
+               (59 . ".\\(?:;;\\|;\\)")
+               (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=>|-]\\)")
+               (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
+               (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
+               (63 . ".\\(?:\\(\\?\\?\\)\\|[:=?]\\)")
+               (91 . ".\\(?:]\\)")
+               (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
+               (94 . ".\\(?:=\\)")
+               (119 . ".\\(?:ww\\)")
+               (123 . ".\\(?:-\\)")
+               (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
+               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
+               )
+             ))
+  (dolist (char-regexp alist)
+    (set-char-table-range composition-function-table (car char-regexp)
+                          `([,(cdr char-regexp) 0 font-shape-gstring]))))
+
 
 (load "~/.emacs.d/haskell.el")
 ;; (load "~/.emacs.d/hie.el")
