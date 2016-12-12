@@ -46,6 +46,7 @@
  '(flycheck-ghc-args (quote ("-fno-warn-unused-do-bind")))
  '(flycheck-ledger-pedantic t)
  '(flycheck-perl-include-path (quote ("." "lib" "../../lib" "../api")))
+ '(flycheck-perl-perlcritic-executable nil)
  '(flycheck-perlcritic-severity 3)
  '(flycheck-psc-executable "psc")
  '(git-commit-fill-column 150)
