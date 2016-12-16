@@ -62,4 +62,9 @@
 (use-package linum-off
   :ensure t)
 
+(use-package org-jira
+  :ensure t
+  :config
+  (setq jiralib-url "https://jira.mail.ru"))
+
 (message "loaded some stuff from staging.el")

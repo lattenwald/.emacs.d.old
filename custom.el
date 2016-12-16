@@ -79,10 +79,12 @@
  '(lua-indent-level 2)
  '(magit-diff-refine-hunk (quote all))
  '(ns-use-srgb-colorspace nil)
+ '(org-jira-coding-system (quote utf8))
+ '(org-jira-serv-alist nil)
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (linum-off haskell-mode neotree hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish apache-mode alchemist ag)))
+    (org-jira linum-off haskell-mode neotree hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish apache-mode alchemist ag)))
  '(pcre-mode nil)
  '(powerline-height 20)
  '(projectile-global-mode t)
