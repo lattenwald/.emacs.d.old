@@ -29,7 +29,7 @@
  '(cua-mode t nil (cua-base))
  '(custom-safe-themes
    (quote
-    ("b0ab5c9172ea02fba36b974bbd93bc26e9d26f379c9a29b84903c666a5fde837" "e56ee322c8907feab796a1fb808ceadaab5caba5494a50ee83a13091d5b1a10c" default)))
+    ("5eb4b22e97ddb2db9ecce7d983fa45eb8367447f151c7e1b033af27820f43760" "6254372d3ffe543979f21c4a4179cd819b808e5dd0f1787e2a2a647f5759c1d1" "57d7e8b7b7e0a22dc07357f0c30d18b33ffcbb7bcd9013ab2c9f70748cfa4838" "595099e6f4a036d71de7e1512656e9375dd72cf60ff69a5f6d14f0171f1de9c1" "9a3c51c59edfefd53e5de64c9da248c24b628d4e78cc808611abd15b3e58858f" "b4fd44f653c69fb95d3f34f071b223ae705bb691fb9abaf2ffca3351e92aa374" "f831c1716ebc909abe3c851569a402782b01074e665a4c140e3e52214f7504a0" "2ae4b0c50dd49a5f74edeae3e49965bf8853954b63c5712a7967ea0a008ecd5b" "5f4dfda04fbf7fd55228266c8aab73953d3087cea7fd06dd7f8ff1e4a497c739" "b0ab5c9172ea02fba36b974bbd93bc26e9d26f379c9a29b84903c666a5fde837" "e56ee322c8907feab796a1fb808ceadaab5caba5494a50ee83a13091d5b1a10c" default)))
  '(delete-old-versions t)
  '(edts-api-async-node-init t)
  '(edts-man-root "/Users/aleksandrkusev/.emacs.d/edts/doc/19.0")
@@ -84,7 +84,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (org-jira linum-off haskell-mode neotree hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish apache-mode alchemist ag)))
+    (flycheck-elixir atom-one-dark-theme org-jira linum-off haskell-mode neotree hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish apache-mode alchemist ag)))
  '(pcre-mode nil)
  '(powerline-height 20)
  '(projectile-global-mode t)
@@ -94,7 +94,7 @@
  '(psc-ide-server-executable "psc-ide-server")
  '(repl-toggle-mode t)
  '(show-paren-mode t)
- '(show-paren-style (quote expression))
+ '(show-paren-style (quote parenthesis))
  '(show-paren-when-point-in-periphery t)
  '(show-paren-when-point-inside-paren nil)
  '(sr-listing-switches "--group-directories-first -alDhgG")
@@ -113,8 +113,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack"))))
  '(cperl-array-face ((t (:inherit font-lock-variable-name-face))))
  '(cperl-hash-face ((t (:inherit font-lock-variable-name-face))))
  '(fixmee-notice-face ((t (:background "yellow1" :foreground "black"))))
+ '(flycheck-error ((t (:underline "Red1"))))
+ '(flycheck-warning ((t (:underline "DarkOrange"))))
  '(whitespace-trailing ((t (:background "gray37" :foreground "yellow" :weight bold)))))

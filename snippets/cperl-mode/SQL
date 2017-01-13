@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: SQL
+# key: S
+# --
+$sth = SQL($0);
+$1
+$sth->finish();

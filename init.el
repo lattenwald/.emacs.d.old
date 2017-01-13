@@ -89,6 +89,8 @@
 ;; (load-theme 'wombat)
 (load-theme 'cobalt t t)
 (enable-theme 'cobalt)
+;; (load-theme 'atom-one-dark-theme t t)
+;; (enable-theme 'atom-one-dark-theme)
 
 (use-package pkg-info ;; dependency for flycheck, projectile
   :ensure t

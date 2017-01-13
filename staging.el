@@ -40,6 +40,12 @@
 (use-package alchemist
   :ensure t)
 
+(use-package flycheck-elixir
+  :ensure t
+  :config
+  (add-hook 'elixir-mode-hook 'flycheck-mode)
+  )
+
 (use-package elm-yasnippets
  :ensure t)
 

@@ -1,13 +1,20 @@
+(add-hook 'interactive-haskell-mode
+          (lambda ()
+            (when (not (equal major-mode "haskell-mode"))
+              (message "not haskell-mode")
+              (messahe major-mode)
+              (interactive-haskell-mode 0))
+            (define-key interactive-haskell-mode-map (kbd "C-c C-t") nil)
+            (diminish 'interactive-haskell-mode)
+            ))
+
 (use-package haskell-mode
   :ensure t
   :config
+  (debug-on-entry 'interactive-haskell-mode)
   (require 'haskell-indentation)
   (setq haskell-ask-also-kill-buffers nil
         haskell-process-type 'stack-ghci)
-  (add-hook 'interactive-haskell-mode
-            (lambda nil
-              (define-key interactive-haskell-mode-map (kbd "C-c C-t") nil)
-              (diminish 'interactive-haskell-mode)))
   (add-hook 'align-load-hook (lambda ()
                                (add-to-list 'align-rules-list
                                             '(haskell-types
