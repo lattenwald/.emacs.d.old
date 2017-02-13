@@ -12,7 +12,8 @@
  '(ag-reuse-buffers t)
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "/Users/aleksandrkusev/.emacs.d/bookmarks")
+ '(bookmark-version-control (quote nospecial))
  '(company-dabbrev-downcase nil)
  '(company-global-modes (quote (not ledger-mode)))
  '(company-idle-delay 0.15)
@@ -51,6 +52,7 @@
  '(flycheck-psc-executable "psc")
  '(git-commit-fill-column 150)
  '(global-company-mode t)
+ '(global-emojify-mode nil)
  '(global-fixmee-mode t)
  '(global-flycheck-mode t)
  '(global-linum-mode t)
@@ -84,7 +86,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (flycheck-elixir atom-one-dark-theme org-jira linum-off haskell-mode neotree hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish apache-mode alchemist ag)))
+    (emojify flycheck-elixir atom-one-dark-theme org-jira linum-off haskell-mode neotree hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode web-mode web-beautify vimrc-mode undo-tree sunrise-x-checkpoints spaceline smex smart-tabs-mode repl-toggle racket-mode psci psc-ide projectile perlbrew nginx-mode markdown-mode magit lua-mode ledger-mode js2-mode inf-ruby idomenu hindent go-mode gitignore-mode gist flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell ess elm-yasnippets elm-mode edts dockerfile-mode diminish apache-mode alchemist ag)))
  '(pcre-mode nil)
  '(powerline-height 20)
  '(projectile-global-mode t)
@@ -102,10 +104,11 @@
  '(sr-speedbar-default-width 20 t)
  '(sr-speedbar-right-side nil t)
  '(tags-revert-without-query t)
- '(tramp-default-method "ssh")
+ '(tramp-default-method "sshx")
  '(tramp-ssh-controlmaster-options
    "-o ControlMaster=auto -o ControlPath='~/.ssh/master-%%r@%%h:%%p' -o ControlPersist=yes" t)
  '(tramp-use-ssh-controlmaster-options nil)
+ '(tramp-verbose 6)
  '(version-control t)
  '(whitespace-style (quote (face trailing space-before-tab empty))))
 (custom-set-faces

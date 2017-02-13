@@ -109,7 +109,8 @@
 
 (use-package nav-flash ;; dependency for fixmee
   :ensure t
-  :pin melpa-stable)
+  :pin melpa-stable
+  :bind ("C-c v" . fixmee-view-listing))
 
 (use-package seq ;; dependency for flycheck
   :ensure t)
@@ -435,10 +436,15 @@
 
 (add-hook 'after-init-hook 'electric-pair-mode)
 
-;; setting up fira-code
+;; setting up fira-code and other fonts
 ;; https://github.com/tonsky/FiraCode/wiki/Setting-up-Emacs
+;; http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html
 (when (window-system)
   (set-default-font "Fira Code"))
+
+(set-fontset-font "fontset-default" nil
+                  (font-spec :name "Symbola"))
+
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                (36 . ".\\(?:>\\)")

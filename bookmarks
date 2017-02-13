@@ -4,43 +4,47 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (#1=(#("dev/scripts" 0 11
       (bmkp-full-record #1#))
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/scripts/ | /scp:dev:/home/yy/git/otvet.mail.ru/scripts/")
-    (sr-directories "~/git/otvet.mail.ru/scripts/" "/scp:dev:/home/yy/git/otvet.mail.ru/scripts/")
+    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/scripts/ | /sshx:dev:/home/yy/git/otvet.mail.ru/scripts/")
+    (sr-directories "~/git/otvet.mail.ru/scripts/" "/sshx:dev:/home/yy/git/otvet.mail.ru/scripts/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/admin" 0 9
       (bmkp-full-record #1#))
     (time 22535 14048 51015 0)
     (visits . 0)
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/admin/ | /scp:dev:/home/yy/git/otvet.mail.ru/perl/admin/")
-    (sr-directories "~/git/otvet.mail.ru/perl/admin/" "/scp:dev:/home/yy/git/otvet.mail.ru/perl/admin/")
+    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/admin/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/admin/")
+    (sr-directories "~/git/otvet.mail.ru/perl/admin/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/admin/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/repair" 0 10
       (bmkp-full-record #1#))
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/repair/ | /scp:dev:/home/yy/git/otvet.mail.ru/perl/repair/")
-    (sr-directories "~/git/otvet.mail.ru/perl/repair/" "/scp:dev:/home/yy/git/otvet.mail.ru/perl/repair/")
+    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/repair/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/repair/")
+    (sr-directories "~/git/otvet.mail.ru/perl/repair/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/repair/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/mysql" 0 9
       (bmkp-full-record #1#))
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/mysql/ | /scp:dev:/home/yy/git/otvet.mail.ru/perl/mysql/")
-    (sr-directories "~/git/otvet.mail.ru/perl/mysql/" "/scp:dev:/home/yy/git/otvet.mail.ru/perl/mysql/")
+    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/mysql/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/mysql/")
+    (sr-directories "~/git/otvet.mail.ru/perl/mysql/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/mysql/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/daemons" 0 11
       (bmkp-full-record #1#))
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/daemons/ | /scp:dev:/home/yy/git/otvet.mail.ru/perl/daemons/")
-    (sr-directories "~/git/otvet.mail.ru/perl/daemons/" "/scp:dev:/home/yy/git/otvet.mail.ru/perl/daemons/")
+    (time 22689 43993 690871 0)
+    (visits . 8)
+    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/daemons/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/daemons/")
+    (sr-directories "~/git/otvet.mail.ru/perl/daemons/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/daemons/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/cron" 0 8
       (bmkp-full-record #1#))
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/cron/ | /scp:dev:/home/yy/git/otvet.mail.ru/perl/cron/")
-    (sr-directories "~/git/otvet.mail.ru/perl/cron/" "/scp:dev:/home/yy/git/otvet.mail.ru/perl/cron/")
+    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/cron/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/cron/")
+    (sr-directories "~/git/otvet.mail.ru/perl/cron/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/cron/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/api" 0 7
       (bmkp-full-record #1#))
+    (time 22689 43932 288597 0)
+    (visits . 1)
     (filename .
-              #("Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/api/ | /scp:dev:/home/yy/git/otvet.mail.ru/perl/api/" 53 56
+              #("Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/api/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/api/" 53 56
                 (tramp-default t)))
     (sr-directories "~/git/otvet.mail.ru/perl/api/"
-                    #("/scp:dev:/home/yy/git/otvet.mail.ru/perl/api/" 1 4
+                    #("/sshx:dev:/home/yy/git/otvet.mail.ru/perl/api/" 1 4
                       (tramp-default t)))
     (handler . sr-checkpoint-handler))
 )

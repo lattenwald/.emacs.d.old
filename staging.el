@@ -44,6 +44,7 @@
   :ensure t
   :config
   (add-hook 'elixir-mode-hook 'flycheck-mode)
+  (add-hook 'elixir-mode-hook 'fixmee-mode)
   )
 
 (use-package elm-yasnippets
@@ -72,5 +73,14 @@
   :ensure t
   :config
   (setq jiralib-url "https://jira.mail.ru"))
+
+(use-package emojify
+  :ensure t)
+
+;;Insert the BOM at the start of a file for UTF
+(defun insert-BOM()
+  (interactive)
+  (goto-char (point-min))
+  (ucs-insert (string-to-number "FEFF" 16)))
 
 (message "loaded some stuff from staging.el")
