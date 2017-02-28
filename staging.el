@@ -38,14 +38,14 @@
 
 ;;; elixir
 (use-package alchemist
-  :ensure t)
-
-(use-package flycheck-elixir
   :ensure t
   :config
-  (add-hook 'elixir-mode-hook 'flycheck-mode)
-  (add-hook 'elixir-mode-hook 'fixmee-mode)
-  )
+  (add-hook 'elixir-mode-hook 'fixmee-mode))
+
+(use-package flycheck-mix
+  :ensure t
+  :config
+  (add-hook 'elixir-mode-hook 'flycheck-mode))
 
 (use-package elm-yasnippets
  :ensure t)
