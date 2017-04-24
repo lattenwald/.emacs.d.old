@@ -179,7 +179,8 @@
             (lambda nil
               (smart-tabs-mode-enable)
               (smart-tabs-advice cperl-indent-line cperl-indent-level)
-              (electric-pair-mode t))))
+              (electric-pair-mode t)
+              (fixmee-mode t))))
 
 (use-package perlbrew
   :ensure t

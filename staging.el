@@ -46,6 +46,11 @@
   :config
   (add-hook 'elixir-mode-hook 'flycheck-mode))
 
+(use-package flycheck-dialyxir
+  :ensure t
+  :config
+  (flycheck-dialyxir-setup))
+
 (use-package elm-yasnippets
  :ensure t)
 
