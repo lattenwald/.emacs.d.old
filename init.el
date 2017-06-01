@@ -309,7 +309,10 @@
       (define-key org-mode-map (kbd "<C-M-right>") 'org-metaright)
       (define-key org-mode-map (kbd "<C-M-up>") 'org-metaup)
       (define-key org-mode-map (kbd "<C-M-down>") 'org-metadown)
-      (define-key org-mode-map (kbd "<C-M-return>") 'org-insert-heading))))
+      (define-key org-mode-map (kbd "<C-M-return>") 'org-insert-heading)))
+  (add-hook 'org-mode-hook (lambda ()
+                             (make-local-variable 'system-time-locale)
+                             (setq system-time-locale "ru_RU"))))
 
 (use-package linum
   :ensure t)

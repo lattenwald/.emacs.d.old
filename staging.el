@@ -81,6 +81,16 @@
 (use-package emojify
   :ensure t)
 
+(use-package sql-indent
+  :ensure t)
+
+(use-package sqlup-mode
+  :ensure t)
+
+;; (use-package reverse-im
+;;   :config
+;;   (reverse-im-activate "russian-computer"))
+
 ;;Insert the BOM at the start of a file for UTF
 (defun insert-BOM()
   (interactive)
