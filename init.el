@@ -92,45 +92,6 @@
 ;; (load-theme 'atom-one-dark-theme t t)
 ;; (enable-theme 'atom-one-dark-theme)
 
-(use-package pkg-info ;; dependency for flycheck, projectile
-  :ensure t
-  :pin melpa-stable)
-
-(use-package f ;; dependency for psci
-  :ensure t
-  :pin melpa-stable)
-
-(use-package let-alist ;; dependency for flycheck-purescript
-  :ensure t)
-
-(use-package julia-mode ;; dependency for ess
-  :ensure t
-  :pin melpa-stable)
-
-(use-package nav-flash ;; dependency for fixmee
-  :ensure t
-  :pin melpa-stable
-  :bind ("C-c v" . fixmee-view-listing))
-
-(use-package seq ;; dependency for flycheck
-  :ensure t)
-
-(use-package deferred ;; dependency for psci
-  :ensure t
-  :pin melpa-stable)
-
-(use-package ucs-utils ;; dependency for back-button
-  :ensure t
-  :pin melpa-stable)
-
-(use-package string-utils ;; dependency for fimee
-  :ensure t
-  :pin melpa-stable)
-
-(use-package s ;; dependency
-  :ensure t
-  :pin melpa-stable)
-
 (use-package ag
   :ensure t)
 
@@ -190,10 +151,6 @@
 (use-package dockerfile-mode
   :ensure t
   :pin melpa-stable)
-
-(use-package button-lock
-  :ensure t
-  :diminish button-lock-mode)
 
 (use-package apache-mode
   :ensure t)
@@ -261,21 +218,8 @@
 (use-package yaml-mode
   :ensure t)
 
-(use-package with-editor ;; dependency
-  :ensure t
-  :pin melpa-stable)
-
-(use-package git-commit ;; dependency
-  :ensure t
-  :pin melpa-stable)
-
-(use-package magit-popup ;; dependency
-  :ensure t
-  :pin melpa-stable)
-
 (use-package magit
-  :ensure t
-  :pin melpa-stable)
+  :ensure t)
 
 (use-package ledger-mode
   :ensure t
@@ -290,14 +234,6 @@
   :ensure t
   :config
   (add-hook 'ledger-mode-hook 'flycheck-mode))
-
-(use-package ess
-  :ensure t
-  :pin melpa-stable
-  :config
-  (require 'ess-site)
-  (eval-after-load "ess-mode" (define-key ess-mode-map (kbd "_") nil))
-  (eval-after-load "inferior-ess-mode" (define-key inferior-ess-mode-map (kbd "_") nil)))
 
 (use-package org
   :ensure t
@@ -326,13 +262,6 @@
 
 (use-package go-mode
   :ensure t)
-
-(use-package smex
-  :ensure t
-  :bind
-  ("M-x" . smex)
-  ("M-X" . smex-major-mode-commands)
-  ("C-c M-x" . execute-extended-command))
 
 (use-package react
   :load-path "elisp/")
@@ -424,10 +353,12 @@
 
 (use-package js2-mode
   :ensure t
-  :pin melpa-stable
   :config
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-  (add-to-list 'interpreter-mode-alist '("node" . js2-mode)))
+  (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+  (add-hook 'js2-mode (lambda ()
+                        (setq tab-width 2)
+                        (setq indent-tabs-mode t))))
 
 (use-package yasnippet
  :ensure t
@@ -444,45 +375,45 @@
 ;; https://github.com/tonsky/FiraCode/wiki/Setting-up-Emacs
 ;; http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html
 (when (window-system)
-  (set-default-font "Fira Code"))
+  (set-default-font "Fira Mono"))
 
 (set-fontset-font "fontset-default" nil
                   (font-spec :name "Symbola"))
 
-(let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
-               (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
-               (36 . ".\\(?:>\\)")
-               (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
-               (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
-               (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
-               (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
-               (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
-               (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
-               (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
-               (48 . ".\\(?:x[a-zA-Z]\\)")
-               (58 . ".\\(?:::\\|[:=]\\)")
-               (59 . ".\\(?:;;\\|;\\)")
-               (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=>|-]\\)")
-               (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
-               (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
-               (63 . ".\\(?:\\(\\?\\?\\)\\|[:=?]\\)")
-               (91 . ".\\(?:]\\)")
-               (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
-               (94 . ".\\(?:=\\)")
-               (119 . ".\\(?:ww\\)")
-               (123 . ".\\(?:-\\)")
-               (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
-               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
-               )
-             ))
-  (dolist (char-regexp alist)
-    (set-char-table-range composition-function-table (car char-regexp)
-                          `([,(cdr char-regexp) 0 font-shape-gstring]))))
+;; (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
+;;                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
+;;                (36 . ".\\(?:>\\)")
+;;                (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
+;;                (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
+;;                (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
+;;                (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
+;;                (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
+;;                (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
+;;                (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
+;;                (48 . ".\\(?:x[a-zA-Z]\\)")
+;;                (58 . ".\\(?:::\\|[:=]\\)")
+;;                (59 . ".\\(?:;;\\|;\\)")
+;;                (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=>|-]\\)")
+;;                (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
+;;                (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
+;;                (63 . ".\\(?:\\(\\?\\?\\)\\|[:=?]\\)")
+;;                (91 . ".\\(?:]\\)")
+;;                (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
+;;                (94 . ".\\(?:=\\)")
+;;                (119 . ".\\(?:ww\\)")
+;;                (123 . ".\\(?:-\\)")
+;;                (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
+;;                (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
+;;                )
+;;              ))
+;;   (dolist (char-regexp alist)
+;;     (set-char-table-range composition-function-table (car char-regexp)
+;;                           `([,(cdr char-regexp) 0 font-shape-gstring]))))
 
 
-(load "~/.emacs.d/haskell.el")
+;; (load "~/.emacs.d/haskell.el")
 
-(load "~/.emacs.d/purescript.el")
+;; (load "~/.emacs.d/purescript.el")
 
 (load "~/.emacs.d/erlang.el")
 
