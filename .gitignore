@@ -12,4 +12,6 @@
 /.cask
 /abbrev_defs
 /emojis
+/eshell
+/network-security.data
 *#*
