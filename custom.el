@@ -14,8 +14,9 @@
  '(backup-directory-alist (quote (("." . "~/.emacs-backups"))))
  '(bmkp-last-as-first-bookmark-file "/Users/aleksandrkusev/.emacs.d/bookmarks")
  '(bookmark-version-control (quote nospecial))
+ '(browse-url-browser-function (quote browse-url-chrome))
  '(company-dabbrev-downcase nil)
- '(company-global-modes (quote (not ledger-mode)))
+ '(company-global-modes (quote (not ledger-mode iESS-mode)))
  '(company-idle-delay 0.15)
  '(cperl-auto-newline-after-colon t)
  '(cperl-close-paren-offset 0)
@@ -35,6 +36,7 @@
  '(edts-api-async-node-init t)
  '(edts-man-root "/Users/aleksandrkusev/.emacs.d/edts/doc/19.0")
  '(elm-compile-arguments (quote ("--yes" "--warn" "--output=elm.js")))
+ '(ess-ask-for-ess-directory nil)
  '(exec-path-from-shell-arguments (quote ("-l")))
  '(fixmee--listview-local-only t t)
  '(fixmee-notice-regexp
@@ -89,9 +91,11 @@
  '(org-jira-coding-system (quote utf8))
  '(org-jira-serv-alist nil)
  '(org-support-shift-select t)
+ '(osx-browse-mode t)
+ '(osx-browse-prefer-browser "com.google.Chrome")
  '(package-selected-packages
    (quote
-    (ag sqlup-mode sql-indent linum-off neotree racket-mode elm-yasnippets inf-ruby erlang yasnippet flycheck-dialyxir yagist web-mode magit flycheck-mix emojify atom-one-dark-theme org-jira hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode vimrc-mode undo-tree sunrise-x-checkpoints spaceline smart-tabs-mode projectile perlbrew nginx-mode markdown-mode lua-mode ledger-mode js2-mode idomenu go-mode gitignore-mode flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell elm-mode dockerfile-mode diminish apache-mode alchemist)))
+    (flycheck-rust racer cargo rust-mode osx-browse ag sqlup-mode sql-indent linum-off neotree racket-mode elm-yasnippets inf-ruby erlang yasnippet flycheck-dialyxir yagist web-mode magit flycheck-mix emojify atom-one-dark-theme org-jira hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode vimrc-mode undo-tree sunrise-x-checkpoints spaceline smart-tabs-mode projectile perlbrew nginx-mode markdown-mode lua-mode ledger-mode js2-mode idomenu go-mode gitignore-mode flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell elm-mode dockerfile-mode diminish apache-mode alchemist)))
  '(pcre-mode nil)
  '(powerline-height 20)
  '(projectile-global-mode t)

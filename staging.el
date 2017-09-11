@@ -52,7 +52,7 @@
   (flycheck-dialyxir-setup))
 
 (use-package elm-yasnippets
- :ensure t)
+  :ensure t)
 
 (use-package racket-mode
   :ensure t)
@@ -73,28 +73,41 @@
 (use-package linum-off
   :ensure t)
 
-(use-package org-jira
-  :ensure t
-  :config
-  (setq jiralib-url "https://jira.mail.ru"))
-
-(use-package emojify
-  :ensure t)
-
 (use-package sql-indent
   :ensure t)
 
-(use-package sqlup-mode
+;;; rust stuff taken from http://julienblanchard.com/2016/fancy-rust-development-with-emacs/
+(use-package rust-mode
+  :ensure t
+  :config
+  (add-hook 'rust-mode-hook
+            (lambda ()
+              (local-set-key (kbd "C-c <tab>") #'rust-format-buffer))))
+
+(use-package cargo
   :ensure t)
 
-;; (use-package reverse-im
-;;   :config
-;;   (reverse-im-activate "russian-computer"))
+(use-package racer
+  :ensure t
+  :config
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode)
+  (add-hook 'racer-mode-hook #'company-mode))
 
-;;Insert the BOM at the start of a file for UTF
+(use-package flycheck-rust
+  :ensure t
+  :config
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+
 (defun insert-BOM()
+  "Insert the BOM at the start of a file for UTF"
   (interactive)
   (goto-char (point-min))
   (ucs-insert (string-to-number "FEFF" 16)))
+
+(defun indent-buffer ()
+  "Indent current buffer according to major mode."
+  (interactive)
+  (indent-region (point-min) (point-max)))
 
 (message "loaded some stuff from staging.el")

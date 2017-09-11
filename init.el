@@ -34,10 +34,10 @@
 ;; protect my keybindings
 (defun protect-my-bindings (bad-map)
   (progn
-      (define-key bad-map (kbd "M-<left>") nil)
-      (define-key bad-map (kbd "M-<right>") nil)
-      (define-key bad-map (kbd "M-<up>") nil)
-      (define-key bad-map (kbd "M-<down>") nil)))
+    (define-key bad-map (kbd "M-<left>") nil)
+    (define-key bad-map (kbd "M-<right>") nil)
+    (define-key bad-map (kbd "M-<up>") nil)
+    (define-key bad-map (kbd "M-<down>") nil)))
 
 ;; what face at point
 (defun what-face (pos)
@@ -160,7 +160,7 @@
   :pin melpa-stable
   :config
   (eval-after-load "markdown-mode"
-  (protect-my-bindings markdown-mode-map)))
+    (protect-my-bindings markdown-mode-map)))
 
 (use-package fixmee
   :ensure t
@@ -361,13 +361,17 @@
                         (setq indent-tabs-mode t))))
 
 (use-package yasnippet
- :ensure t
- :pin melpa-stable
- :config
- (yas-global-mode 1)
- (add-hook 'elm-mode-hook
-           '(lambda () (set (make-local-variable 'yas-indent-line) 'fixed)))
- )
+  :ensure t
+  :pin melpa-stable
+  :config
+  (yas-global-mode 1)
+  (add-hook 'elm-mode-hook
+            '(lambda () (set (make-local-variable 'yas-indent-line) 'fixed)))
+  )
+
+(use-package emojify
+  :ensure t)
+
 
 (add-hook 'after-init-hook 'electric-pair-mode)
 
