@@ -111,4 +111,16 @@
   (interactive)
   (indent-region (point-min) (point-max)))
 
+(flycheck-define-checker perl-docker
+  "A Perl syntax checker using the Perl interpreter in a docker.
+
+See URL `https://www.perl.org', `https://www.docker.com/'."
+  :command ("docker" "exec" "-i" "q_backend_1" "perl" "-w" "-c")
+  :standard-input t
+  :error-patterns
+  ((error line-start (minimal-match (message))
+          " at - line " line
+          (or "." (and ", " (zero-or-more not-newline))) line-end))
+  :modes (perl-mode cperl-mode))
+
 (message "loaded some stuff from staging.el")
