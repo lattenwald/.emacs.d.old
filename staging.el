@@ -111,11 +111,22 @@
   (interactive)
   (indent-region (point-min) (point-max)))
 
+(flycheck-def-option-var flycheck-perl-docker-include-path nil perl-docker
+  "A list of include directories for Perl.
+
+The value of this variable is a list of strings, where each
+string is a directory to add to the include path of Perl.
+Relative paths are relative to the file being checked."
+  :type '(repeat (directory :tag "Include directory"))
+  :safe #'flycheck-string-list-p
+  :package-version '(flycheck . "0.24"))
+
 (flycheck-define-checker perl-docker
   "A Perl syntax checker using the Perl interpreter in a docker.
 
 See URL `https://www.perl.org', `https://www.docker.com/'."
-  :command ("docker" "exec" "-i" "q_backend_1" "perl" "-w" "-c")
+  :command ("docker" "exec" "-i" "q_backend_1" "perl" "-w" "-c"
+            (option-list "-I" flycheck-perl-docker-include-path))
   :standard-input t
   :error-patterns
   ((error line-start (minimal-match (message))
