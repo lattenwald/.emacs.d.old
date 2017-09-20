@@ -100,6 +100,16 @@
   (add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
   (add-hook 'rust-mode-hook 'flycheck-mode))
 
+(use-package dumb-jump
+  :ensure t)
+
+(use-package ripgrep
+  :ensure t)
+
+(use-package projectile-ripgrep
+  :ensure t
+  :bind (("C-c p s r" . projectile-ripgrep)))
+
 (defun insert-BOM()
   "Insert the BOM at the start of a file for UTF"
   (interactive)

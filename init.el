@@ -415,7 +415,7 @@
 ;;                           `([,(cdr char-regexp) 0 font-shape-gstring]))))
 
 
-;; (load "~/.emacs.d/haskell.el")
+(load "~/.emacs.d/haskell.el")
 
 ;; (load "~/.emacs.d/purescript.el")
 

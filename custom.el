@@ -97,7 +97,7 @@
  '(osx-browse-prefer-browser "com.google.Chrome")
  '(package-selected-packages
    (quote
-    (flycheck-rust racer cargo rust-mode osx-browse ag sqlup-mode sql-indent linum-off neotree racket-mode elm-yasnippets inf-ruby erlang yasnippet flycheck-dialyxir yagist web-mode magit flycheck-mix emojify atom-one-dark-theme org-jira hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode vimrc-mode undo-tree sunrise-x-checkpoints spaceline smart-tabs-mode projectile perlbrew nginx-mode markdown-mode lua-mode ledger-mode js2-mode idomenu go-mode gitignore-mode flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell elm-mode dockerfile-mode diminish apache-mode alchemist)))
+    (projectile-ripgrep ripgrep-projectile ripgrep dumb-jump haskell-mode flycheck-rust racer cargo rust-mode osx-browse ag sqlup-mode sql-indent linum-off neotree racket-mode elm-yasnippets inf-ruby erlang yasnippet flycheck-dialyxir yagist web-mode magit flycheck-mix emojify atom-one-dark-theme org-jira hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode vimrc-mode undo-tree sunrise-x-checkpoints spaceline smart-tabs-mode projectile perlbrew nginx-mode markdown-mode lua-mode ledger-mode js2-mode idomenu go-mode gitignore-mode flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell elm-mode dockerfile-mode diminish apache-mode alchemist)))
  '(pcre-mode nil)
  '(powerline-height 20)
  '(projectile-global-mode t)
@@ -108,9 +108,7 @@
  '(psc-ide-server-executable "psc-ide-server")
  '(repl-toggle-mode t)
  '(require-final-newline nil)
- '(safe-local-variable-values
-   (quote
-    ((flycheck-checker . perl-docker))))
+ '(safe-local-variable-values (quote ((flycheck-checker . perl-docker))))
  '(show-paren-mode t)
  '(show-paren-style (quote parenthesis))
  '(show-paren-when-point-in-periphery t)
