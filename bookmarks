@@ -2,48 +2,57 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("dev/scripts" 0 11
+(#1=(#("node1/spider" 0 12
       (bmkp-full-record #1#))
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/scripts/ | /sshx:dev:/home/yy/git/otvet.mail.ru/scripts/")
-    (sr-directories "~/git/otvet.mail.ru/scripts/" "/sshx:dev:/home/yy/git/otvet.mail.ru/scripts/")
+    (filename .
+              #("Sunrise Checkpoint: ~/kribrum/spider/src/ | /sshx:node1:/home/qalex/spider/src/" 45 49
+                (tramp-default t)))
+    (sr-directories "~/kribrum/spider/src/"
+                    #("/sshx:node1:/home/qalex/spider/src/" 1 5
+                      (tramp-default t)))
+    (handler . sr-checkpoint-handler))
+#1=(#("dev/scripts" 0 11
+      (bmkp-full-record #1#))
+    (filename . "Sunrise Checkpoint: ~/mail/otvet.mail.ru/scripts/ | /sshx:dev:/home/yy/git/otvet.mail.ru/scripts/")
+    (sr-directories "~/mail/otvet.mail.ru/scripts/" "/sshx:dev:/home/yy/git/otvet.mail.ru/scripts/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/admin" 0 9
       (bmkp-full-record #1#))
     (time 22535 14048 51015 0)
     (visits . 0)
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/admin/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/admin/")
-    (sr-directories "~/git/otvet.mail.ru/perl/admin/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/admin/")
+    (filename . "Sunrise Checkpoint: ~/mail/otvet.mail.ru/perl/admin/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/admin/")
+    (sr-directories "~/mail/otvet.mail.ru/perl/admin/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/admin/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/repair" 0 10
       (bmkp-full-record #1#))
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/repair/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/repair/")
-    (sr-directories "~/git/otvet.mail.ru/perl/repair/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/repair/")
+    (filename . "Sunrise Checkpoint: ~/mail/otvet.mail.ru/perl/repair/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/repair/")
+    (sr-directories "~/mail/otvet.mail.ru/perl/repair/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/repair/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/mysql" 0 9
       (bmkp-full-record #1#))
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/mysql/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/mysql/")
-    (sr-directories "~/git/otvet.mail.ru/perl/mysql/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/mysql/")
+    (filename . "Sunrise Checkpoint: ~/mail/otvet.mail.ru/perl/mysql/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/mysql/")
+    (sr-directories "~/mail/otvet.mail.ru/perl/mysql/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/mysql/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/daemons" 0 11
       (bmkp-full-record #1#))
     (time 22689 43993 690871 0)
     (visits . 8)
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/daemons/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/daemons/")
-    (sr-directories "~/git/otvet.mail.ru/perl/daemons/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/daemons/")
+    (filename . "Sunrise Checkpoint: ~/mail/otvet.mail.ru/perl/daemons/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/daemons/")
+    (sr-directories "~/mail/otvet.mail.ru/perl/daemons/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/daemons/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/cron" 0 8
       (bmkp-full-record #1#))
-    (filename . "Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/cron/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/cron/")
-    (sr-directories "~/git/otvet.mail.ru/perl/cron/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/cron/")
+    (filename . "Sunrise Checkpoint: ~/mail/otvet.mail.ru/perl/cron/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/cron/")
+    (sr-directories "~/mail/otvet.mail.ru/perl/cron/" "/sshx:dev:/home/yy/git/otvet.mail.ru/perl/cron/")
     (handler . sr-checkpoint-handler))
 #1=(#("dev/api" 0 7
       (bmkp-full-record #1#))
     (time 22689 43932 288597 0)
     (visits . 1)
     (filename .
-              #("Sunrise Checkpoint: ~/git/otvet.mail.ru/perl/api/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/api/" 53 56
+              #("Sunrise Checkpoint: ~/mail/otvet.mail.ru/perl/api/ | /sshx:dev:/home/yy/git/otvet.mail.ru/perl/api/" 53 56
                 (tramp-default t)))
-    (sr-directories "~/git/otvet.mail.ru/perl/api/"
+    (sr-directories "~/mail/otvet.mail.ru/perl/api/"
                     #("/sshx:dev:/home/yy/git/otvet.mail.ru/perl/api/" 1 4
                       (tramp-default t)))
     (handler . sr-checkpoint-handler))
