@@ -76,6 +76,8 @@
 
 (use-package erlang
   :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("\\`rebar\\.config\\'" . erlang-mode))
   :config
   (eval-after-load "erlang-mode"
     (progn
@@ -85,6 +87,13 @@
             (lambda ()
               (mapc (lambda (a) (add-to-list 'flycheck-erlang-library-path a))
                     (ebm-get-deps-code-path-dirs))
+              (flycheck-select-checker 'erlang)
+              (fixmee-mode t)
+              (setq indent-tabs-mode    nil
+                    tab-stop-list       ()
+                    tab-width           4
+					erlang-indent-level 4
+					comment-start "%%")
               ;; (mapc (lambda (a) (add-to-list 'flycheck-erlang-include-path a))
               ;;       (ebm-get-deps-include-dirs)))
             ))
@@ -103,5 +112,10 @@
   :config
   ;; (require 'flycheck-dialyzer)
   (add-hook 'erlang-mode-hook 'flycheck-mode))
+
+(use-package kerl
+  :ensure t
+  :config
+  (kerl-use "18.3-dev"))
 
 (message "loaded erlang support from erlang.el")

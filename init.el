@@ -85,14 +85,18 @@
   :ensure color-theme-modern
   :config)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-;; (load-theme 'material)
+(load-theme 'material t t)
+(enable-theme 'material)
 ;; (load-theme 'wombat)
-(load-theme 'cobalt t t)
-(enable-theme 'cobalt)
+;; (load-theme 'cobalt t t)
+;; (enable-theme 'cobalt)
 ;; (load-theme 'atom-one-dark-theme t t)
 ;; (enable-theme 'atom-one-dark-theme)
 
 (use-package ag
+  :ensure t)
+
+(use-package ripgrep
   :ensure t)
 
 (use-package projectile
@@ -100,6 +104,18 @@
   :pin melpa-stable
   :config
   (add-hook 'after-init-hook 'projectile-global-mode))
+
+(use-package projectile-ripgrep
+  :ensure t
+  :bind (("C-c p s r" . projectile-ripgrep)))
+
+(use-package cmake-mode
+  :ensure t)
+
+(use-package macro-math
+  :ensure t
+  :config
+  (global-set-key "\C-x=" 'macro-math-eval-region))
 
 (use-package exec-path-from-shell
   :ensure t
@@ -379,7 +395,9 @@
 ;; https://github.com/tonsky/FiraCode/wiki/Setting-up-Emacs
 ;; http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html
 (when (window-system)
-  (set-default-font "Fira Mono"))
+  ;; (set-default-font "Fira Code")
+  (set-default-font "Hack")
+  (set-face-attribute 'default nil :height 100))
 
 (set-fontset-font "fontset-default" nil
                   (font-spec :name "Symbola"))

@@ -110,6 +110,14 @@
   :ensure t
   :bind (("C-c p s r" . projectile-ripgrep)))
 
+(use-package cmake-mode
+  :ensure t)
+
+(use-package macro-math
+  :ensure t
+  :config
+  (global-set-key "\C-x=" 'macro-math-eval-region))
+
 (defun insert-BOM()
   "Insert the BOM at the start of a file for UTF"
   (interactive)
