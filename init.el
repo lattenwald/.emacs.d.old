@@ -210,7 +210,18 @@
   :diminish global-whitespace-mode
   :config
   (add-hook 'before-save-hook 'whitespace-cleanup)
+
+  (defun save-buffer-without-dtw ()
+    (interactive)
+    (let ((b (current-buffer)))   ; memorize the buffer
+      (with-temp-buffer ; new temp buffer to bind the global value of before-save-hook
+        (let ((before-save-hook (remove 'whitespace-cleanup before-save-hook)))
+          (with-current-buffer b  ; go back to the current buffer, before-save-hook is now buffer-local
+            (let ((before-save-hook (remove 'whitespace-cleanup before-save-hook)))
+              (save-buffer)))))))
   )
+
+
 
 (use-package sunrise-commander
   :ensure t)
