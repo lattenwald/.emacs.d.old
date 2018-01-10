@@ -1,8 +1,8 @@
-(add-hook 'interactive-haskell-mode
+(add-hook 'interactive-haskell-mode-hook
           (lambda ()
             (when (not (equal major-mode "haskell-mode"))
               (message "not haskell-mode")
-              (messahe major-mode)
+              (message major-mode)
               (interactive-haskell-mode 0))
             (define-key interactive-haskell-mode-map (kbd "C-c C-t") nil)
             (diminish 'interactive-haskell-mode)
