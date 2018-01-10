@@ -21,7 +21,8 @@
         project-dir
       (erlang-flymake-get-app-dir))))
 
-(use-package auto-highlight-mode
+(use-package auto-highlight-symbol
+  :ensure t
   :config
   (add-hook 'auto-highlight-symbol-mode
             (lambda ()
