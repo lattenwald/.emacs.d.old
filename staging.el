@@ -103,6 +103,11 @@
 (use-package dumb-jump
   :ensure t)
 
+(use-package dtrt-indent
+  :ensure t
+  :config
+  (dtrt-indent-mode t))
+
 (defun insert-BOM()
   "Insert the BOM at the start of a file for UTF"
   (interactive)
