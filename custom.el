@@ -92,12 +92,13 @@
  '(ns-use-srgb-colorspace nil)
  '(org-jira-coding-system (quote utf8))
  '(org-jira-serv-alist nil)
+ '(org-src-fontify-natively t)
  '(org-support-shift-select t)
  '(osx-browse-mode t)
  '(osx-browse-prefer-browser "com.google.Chrome")
  '(package-selected-packages
    (quote
-	(macro-math cmake-mode kerl sunrise-x-checkpoints ht sunrise-commander company projectile-ripgrep ripgrep-projectile ripgrep dumb-jump haskell-mode flycheck-rust racer cargo rust-mode osx-browse ag sqlup-mode sql-indent linum-off neotree racket-mode elm-yasnippets inf-ruby erlang yasnippet flycheck-dialyxir yagist web-mode magit flycheck-mix emojify atom-one-dark-theme org-jira hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode vimrc-mode undo-tree spaceline smart-tabs-mode projectile perlbrew nginx-mode markdown-mode lua-mode ledger-mode js2-mode idomenu go-mode gitignore-mode flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell elm-mode dockerfile-mode diminish apache-mode alchemist)))
+	(auto-highlight-symbol dtrt-indent macro-math cmake-mode kerl sunrise-x-checkpoints ht sunrise-commander company projectile-ripgrep ripgrep-projectile ripgrep dumb-jump haskell-mode flycheck-rust racer cargo rust-mode osx-browse ag sqlup-mode sql-indent linum-off neotree racket-mode elm-yasnippets inf-ruby erlang yasnippet flycheck-dialyxir yagist web-mode magit flycheck-mix emojify atom-one-dark-theme org-jira hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode vimrc-mode undo-tree spaceline smart-tabs-mode projectile perlbrew nginx-mode markdown-mode lua-mode ledger-mode js2-mode idomenu go-mode gitignore-mode flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell elm-mode dockerfile-mode diminish apache-mode alchemist)))
  '(pcre-mode nil)
  '(powerline-height 20)
  '(projectile-global-mode t)
@@ -108,6 +109,7 @@
  '(psc-ide-server-executable "psc-ide-server")
  '(repl-toggle-mode t)
  '(require-final-newline nil)
+ '(ripgrep-arguments (quote ("--type-not css --type-not js")))
  '(safe-local-variable-values (quote ((flycheck-checker . perl-docker))))
  '(show-paren-mode t)
  '(show-paren-style (quote parenthesis))
