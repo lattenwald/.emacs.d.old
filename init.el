@@ -211,6 +211,10 @@
   :config
   (add-hook 'before-save-hook 'whitespace-cleanup)
 
+  (defun prevent-whitespace-mode-for-magit ()
+    (not (derived-mode-p 'magit-mode)))
+  (add-function :before-while whitespace-enable-predicate 'prevent-whitespace-mode-for-magit)
+
   (defun save-buffer-without-dtw ()
     (interactive)
     (let ((b (current-buffer)))   ; memorize the buffer

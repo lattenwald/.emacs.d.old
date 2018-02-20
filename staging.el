@@ -108,6 +108,8 @@
   :config
   (dtrt-indent-mode t))
 
+(add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
+
 (defun insert-BOM()
   "Insert the BOM at the start of a file for UTF"
   (interactive)
@@ -141,5 +143,9 @@ See URL `https://www.perl.org', `https://www.docker.com/'."
           " at - line " line
           (or "." (and ", " (zero-or-more not-newline))) line-end))
   :modes (perl-mode cperl-mode))
+
+(require 'beancount)
+(add-to-list 'auto-mode-alist '("\\.beancount\\'" . beancount-mode))
+
 
 (message "loaded some stuff from staging.el")
