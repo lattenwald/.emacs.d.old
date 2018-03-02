@@ -72,10 +72,11 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 (package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/git/diminish.el")
+(let ((default-directory  "~/.emacs.d/git/"))
+  (normal-top-level-add-subdirs-to-load-path))
+
 (require 'diminish)
 
-(add-to-list 'load-path "~/.emacs.d/git/use-package")
 ;; (eval-when-compile
 ;;   (require 'use-package))
 (require 'use-package)

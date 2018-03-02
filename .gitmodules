@@ -13,3 +13,6 @@
 [submodule "git/diminish.el"]
 	path = git/diminish.el
 	url = https://github.com/myrjola/diminish.el
+[submodule "git/mix-format"]
+	path = git/mix-format
+	url = https://github.com/anildigital/mix-format.el.git

@@ -36,6 +36,12 @@
 (global-set-key (kbd "M-i") 'insert-file-name)
 
 ;;; elixir
+(require 'mix-format)
+(add-hook 'elixir-mode-hook
+		  (lambda ()
+			"bind C-c TAB to mix-format"
+			(local-set-key (kbd "C-c <tab>") 'mix-format)))
+
 (use-package alchemist
   :ensure t
   :config
