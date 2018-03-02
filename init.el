@@ -450,6 +450,8 @@
 
 (load "~/.emacs.d/haskell.el")
 
+(load "~/.emacs.d/rust")
+
 ;; (load "~/.emacs.d/purescript.el")
 
 (load "~/.emacs.d/erlang.el")
