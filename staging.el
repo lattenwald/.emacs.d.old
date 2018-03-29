@@ -36,11 +36,11 @@
 (global-set-key (kbd "M-i") 'insert-file-name)
 
 ;;; elixir
-(require 'mix-format)
+(require 'elixir-format)
 (add-hook 'elixir-mode-hook
 		  (lambda ()
-			"bind C-c TAB to mix-format"
-			(local-set-key (kbd "C-c <tab>") 'mix-format)))
+			"bind C-c TAB to elixir-format"
+			(local-set-key (kbd "C-c <tab>") 'elixir-format)))
 
 (use-package alchemist
   :ensure t
@@ -89,6 +89,24 @@
   :ensure t
   :config
   (dtrt-indent-mode t))
+
+;; python
+(use-package anaconda-mode
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'anaconda-mode))
+
+(use-package company-anaconda
+  :ensure t
+  :config
+  (eval-after-load "company"
+    '(add-to-list 'company-backends 'company-anaconda)))
+
+(use-package notmuch
+  :ensure t)
+
+(use-package sublimity
+  :ensure t)
 
 (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
 
