@@ -305,6 +305,7 @@
   ;;; web-mode
   (add-to-list 'auto-mode-alist '("\\.html?$" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.eex$" . web-mode)) ;; embedded elixir
   ;;; web mode for jsxh
   ;;; https://truongtx.me/2014/03/10/emacs-setup-jsx-mode-and-jsx-syntax-checking/
   (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
