@@ -108,6 +108,9 @@
 (use-package sublimity
   :ensure t)
 
+(use-package textile-mode
+  :ensure t)
+
 (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
 
 (defun insert-BOM()
