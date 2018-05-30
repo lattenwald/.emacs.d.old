@@ -405,6 +405,49 @@
 (use-package emojify
   :ensure t)
 
+(use-package textile-mode
+  :ensure t)
+
+(use-package systemd
+  :ensure t)
+
+;;; elixir
+(require 'elixir-format)
+(add-hook 'elixir-mode-hook
+		  (lambda ()
+			"bind C-c TAB to elixir-format"
+			(local-set-key (kbd "C-c <tab>") 'elixir-format)))
+
+
+;; https://github.com/tonini/alchemist.el/issues/185#issuecomment-257433209
+(defadvice alchemist-project-root (around seancribbs/alchemist-project-root activate)
+  (let ((alchemist-project-mix-project-indicator ".git"))
+    ad-do-it))
+
+(defun seancribbs/activate-alchemist-root-advice ()
+  "Activates advice to override alchemist's root-finding logic"
+  (ad-activate 'alchemist-project-root))
+
+(use-package alchemist
+  :ensure t
+  :config
+  (add-hook 'elixir-mode-hook 'fixmee-mode)
+  (add-hook 'elixir-mode-hook 'seancribbs/activate-alchemist-root-advice))
+
+(use-package flycheck-mix
+  :ensure t
+  :config
+  (add-hook 'elixir-mode-hook 'flycheck-mode))
+
+(use-package flycheck-dialyxir
+  :ensure t
+  :config
+  (flycheck-dialyxir-setup))
+
+(use-package flycheck-credo
+  :ensure t
+  :config
+  (flycheck-credo-setup))
 
 (add-hook 'after-init-hook 'electric-pair-mode)
 
