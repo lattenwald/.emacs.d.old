@@ -54,6 +54,7 @@
  '(flycheck-completion-system (quote ido))
  '(flycheck-elixir-credo-executable nil)
  '(flycheck-ghc-args (quote ("-fno-warn-unused-do-bind")))
+ '(flycheck-ghc-search-path nil)
  '(flycheck-ledger-pedantic t)
  '(flycheck-perl-docker-include-path (quote ("/home/sites/newapi/perl/api")))
  '(flycheck-perl-executable "/Users/aleksandrkusev/git/otvet.mail.ru/_perl.sh")
@@ -104,7 +105,7 @@
  '(osx-browse-prefer-browser "com.google.Chrome")
  '(package-selected-packages
    (quote
-	(elixir-yasnippets systemd flycheck-credo textile-mode sublimity notmuch company-anaconda anaconda-mode auto-highlight-symbol dtrt-indent macro-math cmake-mode kerl sunrise-x-checkpoints ht sunrise-commander company projectile-ripgrep ripgrep-projectile ripgrep dumb-jump haskell-mode flycheck-rust racer cargo rust-mode osx-browse ag sqlup-mode sql-indent linum-off neotree racket-mode elm-yasnippets inf-ruby erlang yasnippet flycheck-dialyxir yagist web-mode magit flycheck-mix emojify atom-one-dark-theme org-jira hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode vimrc-mode undo-tree spaceline smart-tabs-mode projectile perlbrew nginx-mode markdown-mode lua-mode ledger-mode js2-mode idomenu go-mode gitignore-mode flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell elm-mode dockerfile-mode diminish apache-mode alchemist)))
+	(web-beautify magit-find-file elixir-yasnippets systemd flycheck-credo textile-mode sublimity notmuch company-anaconda anaconda-mode auto-highlight-symbol dtrt-indent macro-math cmake-mode kerl sunrise-x-checkpoints ht sunrise-commander company projectile-ripgrep ripgrep-projectile ripgrep dumb-jump haskell-mode flycheck-rust racer cargo rust-mode osx-browse ag sqlup-mode sql-indent linum-off neotree racket-mode elm-yasnippets inf-ruby erlang yasnippet flycheck-dialyxir yagist web-mode magit flycheck-mix emojify atom-one-dark-theme org-jira hledger-mode flycheck-ledger pcre2el bookmark+ buttercup evil-mode color-theme-modern yaml-mode vimrc-mode undo-tree spaceline smart-tabs-mode projectile perlbrew nginx-mode markdown-mode lua-mode ledger-mode js2-mode idomenu go-mode gitignore-mode flycheck-elm flycheck-dialyzer flx-ido fixmee exec-path-from-shell elm-mode dockerfile-mode diminish apache-mode alchemist)))
  '(pcre-mode nil)
  '(powerline-height 20)
  '(projectile-global-mode t)
@@ -127,11 +128,11 @@
  '(sr-speedbar-default-width 20 t)
  '(sr-speedbar-right-side nil t)
  '(tags-revert-without-query t)
- '(tramp-default-method "sshx")
+ '(tramp-default-method "ssh" nil (tramp))
  '(tramp-ssh-controlmaster-options
    "-o ControlMaster=auto -o ControlPath='~/.ssh/master-%%r@%%h:%%p' -o ControlPersist=yes" t)
- '(tramp-use-ssh-controlmaster-options nil)
- '(tramp-verbose 3)
+ '(tramp-use-ssh-controlmaster-options nil nil (tramp))
+ '(tramp-verbose 3 nil (tramp))
  '(version-control t)
  '(whitespace-style (quote (face trailing space-before-tab empty))))
 (custom-set-faces

@@ -253,6 +253,11 @@
 (use-package magit
   :ensure t)
 
+(use-package magit-find-file
+  :ensure t
+  :bind
+  ("C-c C-f" . magit-find-file-completing-read))
+
 (use-package ledger-mode
   :ensure t
   :config
