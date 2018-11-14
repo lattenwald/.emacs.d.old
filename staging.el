@@ -83,10 +83,29 @@
 (use-package notmuch
   :ensure t)
 
-(use-package sublimity
+(use-package elixir-yasnippets
   :ensure t)
 
-(use-package elixir-yasnippets
+(use-package lsp-mode
+  :ensure t
+  :config
+  (lsp-define-tcp-client
+   lsp-erlang
+   "erlang"
+   (lambda () default-directory)
+     ;; (let ((dirname (file-name-directory (buffer-file-name))))
+     ;;   (locate-dominating-file dirname "rebar.config")))
+   '("/usr/bin/true")
+   "localhost"
+   9000))
+
+(use-package lsp-ui
+  :ensure t)
+
+(use-package docker-tramp
+  :ensure t)
+
+(use-package company-lsp
   :ensure t)
 
 (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
@@ -97,10 +116,32 @@
   (goto-char (point-min))
   (ucs-insert (string-to-number "FEFF" 16)))
 
+;; adopted from https://stackoverflow.com/questions/19651460/replace-escaped-unicode-with-elisp
+(defun replace-c-escape-codes (input)
+  "Replace unicode-encoded characters in the form \\uXXXX with their unicode representations in string"
+  (replace-regexp-in-string
+   "\\\\u[[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]]"
+   (lambda (match)
+     (make-string 1 (string-to-number (substring match 2) 16)))
+   input))
+
+;; combined previous function with wisdom from
+;; https://emacs.stackexchange.com/questions/12135/replace-string-in-buffer-programatically
+(defun buf-replace-c-escape-codes ()
+  "Replace unicode-encoded characters in the form \\uXXXX with their unicode representations in buffer"
+  (interactive)
+  (while (re-search-forward "\\\\u\\([[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]]\\)" nil t)
+    (replace-match (make-string 1 (string-to-number (match-string 1) 16)))))
+
 (defun indent-buffer ()
   "Indent current buffer according to major mode."
   (interactive)
   (indent-region (point-min) (point-max)))
+
+(defun scratchpad-buffer ()
+  "Generate temporary buffer"
+  (interactive)
+  (switch-to-buffer (make-temp-name "scratch-")))
 
 (flycheck-def-option-var flycheck-perl-docker-include-path nil perl-docker
   "A list of include directories for Perl.

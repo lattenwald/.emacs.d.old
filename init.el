@@ -248,7 +248,9 @@
   :ensure t)
 
 (use-package yaml-mode
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'yaml-mode-hook 'flycheck-mode))
 
 (use-package magit
   :ensure t)
@@ -331,7 +333,12 @@
               (when (equal web-mode-content-type "jsx")
                 ;; enable flycheck
                 (flycheck-select-checker 'jsxhint-checker)
-                (flycheck-mode)))))
+                (flycheck-mode))
+			  (setq web-mode-enable-auto-pairing nil)
+			  (setq-local
+			   electric-pair-pairs
+			   (append electric-pair-pairs '((?% . ?%))))
+			)))
 
 (use-package gitignore-mode
   :ensure t
@@ -369,7 +376,16 @@
   :ensure t
   :pin melpa-stable
   :bind (:map elm-mode-map
-              ("C-c C-c" . elm-compile-buffer-debug))
+              ("C-c C-c" . elm-compile-buffer-debug)
+              ("C-c <tab>" . elm-mode-format-buffer))
+  :init
+  (setq elm-interactive-command '("elm" "repl"))
+  (setq elm-reactor-command '("elm" "reactor"))
+  (setq elm-reactor-arguments '("--port" "8000"))
+  (setq elm-compile-command '("elm" "make"))
+  (setq elm-compile-arguments '("--output=elm.js" "--debug"))
+  (setq elm-package-command '("elm" "package"))
+  (setq elm-package-json "elm.json")
   :config
   (add-hook 'elm-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'align-load-hook 'elm-align-rules)
@@ -383,7 +399,7 @@
       (elm-compile-buffer))))
 
 (use-package flycheck-elm
-  :ensure t
+  :load-path "git/flycheck-elm"
   :config
   (eval-after-load 'flycheck
     '(flycheck-elm-setup))
@@ -417,6 +433,11 @@
   :ensure t)
 
 ;;; elixir
+(use-package elixir-mode
+  :config
+  (add-hook 'elixir-mode-hook
+			(lambda () (setq indent-tabs-mode nil))))
+
 (require 'elixir-format)
 (add-hook 'elixir-mode-hook
 		  (lambda ()
@@ -482,3 +503,4 @@
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
+(put 'erase-buffer 'disabled nil)

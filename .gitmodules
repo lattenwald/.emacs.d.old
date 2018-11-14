@@ -16,3 +16,6 @@
 [submodule "git/mix-format"]
 	path = git/mix-format
 	url = https://github.com/anildigital/mix-format.el.git
+[submodule "git/flycheck-elm.git"]
+	path = git/flycheck-elm.git
+	url = https://github.com/lattenwald/flycheck-elm.git

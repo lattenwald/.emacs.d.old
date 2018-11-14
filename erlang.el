@@ -55,10 +55,10 @@
   (ebm-directory-dirs (ebm-find-rebar-top) "include"))
 
 (use-package edts
-  :disabled t
   :ensure t
+  :bind (:map edts-mode-map
+			  ("C-h f" . edts-show-doc-under-point))
   :config
-  (require 'edts-start)
   (defun edts-man--fetch-vsns ()
     (with-current-buffer (url-retrieve-synchronously edts-man-download-url)
       (goto-char (point-min))
@@ -70,10 +70,12 @@
           (push (cons (match-string 2) (match-string 1)) vsn-urls))
         (kill-buffer)
         vsn-urls)))
+  (require 'edts-start)
   (eval-after-load "edts-mode"
     (progn
-      (define-key edts-mode-map (kbd "C-h f") 'edts-show-doc-under-point)
-      (define-key edts-mode-map (kbd "C-h F") 'edts-find-doc))))
+      ;; (define-key edts-mode-map (kbd "C-h f") 'edts-show-doc-under-point)
+	  ;;     (define-key edts-mode-map (kbd "C-h F") 'edts-find-doc)
+	  )))
 
 (use-package erlang
   :ensure t
@@ -92,21 +94,23 @@
               (fixmee-mode t)
               (setq indent-tabs-mode    nil
                     tab-stop-list       ()
-                    tab-width           4
-					erlang-indent-level 4
-					comment-start "%%")
+                    tab-width           2
+                    erlang-indent-level 2
+                    comment-start "%%"
+					inferior-erlang-machine-options '("-name" "emacs@localhost")
+					erl-nodename-cache (make-symbol "emacs@localhost")
+                    erlang-root-dir "/usr/lib/erlang")
               ;; (mapc (lambda (a) (add-to-list 'flycheck-erlang-include-path a))
               ;;       (ebm-get-deps-include-dirs)))
             ))
-  ;; (setq erlang-root-dir "/usr/local/Cellar/erlang/19.0.2/lib/erlang")
-  ;; (add-to-list 'exec-path "/usr/local/Cellar/erlang/19.0.2/lib/erlang/bin")
 
   ;; prevent annoying hang-on-compile
   (defvar inferior-erlang-prompt-timeout t)
-  ;; default node name to emacs@localhost
-  (setq inferior-erlang-machine-options '("-name" "emacs@localhost"))
-  (setq erl-nodename-cache (make-symbol "emacs@localhost"))
   )
+
+;; (add-to-list 'load-path "~/.emacs.d/distel/elisp")
+;; (require 'distel)
+;; (distel-setup)
 
 (use-package flycheck-dialyzer
   :ensure t
