@@ -87,25 +87,25 @@
   :ensure t)
 
 (use-package lsp-mode
-  :ensure t
-  :config
-  (lsp-define-tcp-client
-   lsp-erlang
-   "erlang"
-   (lambda () default-directory)
-     ;; (let ((dirname (file-name-directory (buffer-file-name))))
-     ;;   (locate-dominating-file dirname "rebar.config")))
-   '("/usr/bin/true")
-   "localhost"
-   9000))
+  :ensure t)
 
 (use-package lsp-ui
-  :ensure t)
+  :ensure t
+  :config
+  ;; (setq lsp-ui-sideline-ignore-duplicate t)
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+  )
 
 (use-package docker-tramp
   :ensure t)
 
 (use-package company-lsp
+  :ensure t
+  ;; :config
+  ;; (push 'company-lsp company-backends)
+  )
+
+(use-package easy-jekyll
   :ensure t)
 
 (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
