@@ -86,8 +86,10 @@
   :ensure color-theme-modern
   :config)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'material t t)
-(enable-theme 'material)
+(load-theme 'darkplus t t)
+(enable-theme 'darkplus)
+;; (load-theme 'material t t)
+;; (enable-theme 'material)
 ;; (load-theme 'wombat)
 ;; (load-theme 'cobalt t t)
 ;; (enable-theme 'cobalt)
